@@ -1,3 +1,4 @@
+// Part 1
 console.log(4 + 4 / 2)
 // 6
 console.log((2 + -7) * 3)
@@ -62,3 +63,29 @@ console.log('bootcamp'.indexOf('o') > -1)
 // true
 console.log('science'.indexOf('x') === -1)
 // true
+// Part 2
+// 1
+var idx = 'abcde'.indexOf('D');
+idx = idx + 11;
+console.log(idx); // 10
+idx * 2;
+console.log(idx); // 20 **10, did not change idx with =**
+// 2
+var num = 33;
+var isEven = num % 2 === 0;
+console.log(isEven); // false
+console.log(!isEven); // true
+// 3
+var str1 = 'marker';
+var num = 'whiteboard'.length - str1.length;
+console.log(num); // 4
+var str2 = 'bootcamp';
+console.log(str2[num].toUpperCase()); // C
+var char = str2[num].toLowerCase(); // c
+console.log(char + '!'); // c!
+// 4
+var sentence = 'welcome to bootcamp prep';
+var lastChar = sentence[sentence.length - 1];
+console.log(lastChar); // p
+console.log(sentence.indexOf(lastChar)); // 18 **first instance only**
+// Part 3
