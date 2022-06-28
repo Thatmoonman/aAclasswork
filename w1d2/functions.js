@@ -125,9 +125,12 @@ let average = (num1, num2) => {
 // echo("hey"); // => "HEY ... hey ... hey"
 // echo("JUMp"); // => "JUMP ... JUMp ... jump"
 //
-function echo(string) {
-  
-}
+// function echo(string) {
+//     let repeat = string.toUpperCase() + " ... " + string + " ... " + string.toLowerCase()
+//   console.log(repeat)
+//   }
+
+//   echo("Hey")
 // Write a function `isEven` that takes in a number and returns `true` if the number
 // is even, `false` otherwise. Write `isEven` by using the `isOdd` function you
 // made previously. HINT: you can call `isOdd` from within `isEven`.
@@ -144,3 +147,11 @@ function echo(string) {
 // }
 // isEven(5)
 // isEven(6)
+function isOdd(num) {
+  return num % 2 !== 0
+}
+console.log(isEven(5))
+
+function isEven(num) {
+  return !isOdd(num)
+}
