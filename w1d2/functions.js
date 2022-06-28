@@ -40,10 +40,67 @@ let average = (num1, num2) => {
 // plusFive(-8);  // => -3
 //
 
-function plusFive(num) {
-    let sum = num + 5
-  console.log(sum)
+// function plusFive(num) {
+//     let sum = num + 5
+//   console.log(sum)
+// }
+// plusFive(5)
+// plusFive(0)
+// plusFive(-5)
+
+// Write a function `threeOrSeven` that takes in a number and returns `true`
+// if the number is divisible by either 3 or 7 and `false` otherwise.
+// Write two versions of this function, using conditionals and without using conditionals
+//
+//
+// Examples:
+// threeOrSeven(3);   // => true
+// threeOrSeven(42);  // => true
+// threeOrSeven(8);   // => false
+//
+// function threeOrSeven(num) {
+//   if (num % 3 === 0) {
+//     console.log("true")
+//   } else if (num % 7 === 0) {
+//     console.log("true")
+//   } else {
+//     console.log("false")
+//   }
+// }
+// threeOrSeven(21)
+// threeOrSeven(14)
+// threeOrSeven(5)
+
+// Write a function `hello` that takes in a string and prints out "Hello, " followed
+// by the string. HINT: this function doesn't need to return anything, it should
+// just print using console.log
+//
+// Examples:
+// hello("child");    // prints "Hello, child"
+// hello("Anthony");  // prints "Hello, Anthony"
+//
+function hello(str) {
+  console.log("hello, " + str)
 }
-plusFive(5)
-plusFive(0)
-plusFive(-5)
+hello("JUSTIN")
+// Write a function `yell` that takes in a string and returns a "yelled" version
+// of that string.
+//
+// Examples:
+// yell("I want to go to the store"); // => "I WANT TO GO TO THE STORE!!!"
+// yell("Time to program"); // => "TIME TO PROGRAM!!!"
+//
+function yell(string) {
+  console.log(string.toUpperCase())
+}
+yell("i'm late")
+// Write a function `whisper` that takes in a string and returns a "whispered" version
+// of that string.
+//
+// Examples:
+// whisper("Hey Anthony"); // => "...hey anthony..."
+// whisper("YEA! that was fun"); // => "...yea! that was fun..."
+function whisper(string) {
+console.log(string.toLowerCase())
+}
+whisper("THIS IS A LIBRARY!")
