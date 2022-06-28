@@ -79,10 +79,10 @@ let average = (num1, num2) => {
 // hello("child");    // prints "Hello, child"
 // hello("Anthony");  // prints "Hello, Anthony"
 //
-function hello(str) {
-  console.log("hello, " + str)
-}
-hello("JUSTIN")
+// function hello(str) {
+//   console.log("hello, " + str)
+// }
+// hello("JUSTIN")
 // Write a function `yell` that takes in a string and returns a "yelled" version
 // of that string.
 //
@@ -90,17 +90,57 @@ hello("JUSTIN")
 // yell("I want to go to the store"); // => "I WANT TO GO TO THE STORE!!!"
 // yell("Time to program"); // => "TIME TO PROGRAM!!!"
 //
-function yell(string) {
-  console.log(string.toUpperCase())
-}
-yell("i'm late")
+// function yell(string) {
+//   console.log(string.toUpperCase())
+// }
+// yell("i'm late")
 // Write a function `whisper` that takes in a string and returns a "whispered" version
 // of that string.
 //
 // Examples:
 // whisper("Hey Anthony"); // => "...hey anthony..."
 // whisper("YEA! that was fun"); // => "...yea! that was fun..."
-function whisper(string) {
-console.log(string.toLowerCase())
+// function whisper(string) {
+// console.log(string.toLowerCase())
+// }
+// whisper("THIS IS A LIBRARY!")
+
+// Write a function `isSubstring` that takes in two strings, `searchString` and
+// `subString`. The function should return `true` if `subString` is a part of the
+// `searchString`, `false` otherwise.
+// Write two versions of this function, using conditionals and without using conditionals
+//
+// Examples:
+// isSubstring("The cat went to the store", "he cat went"); // => true
+// isSubstring("Time to program", "time"); // => true
+// isSubstring("Jump for joy", "joys"); // => false
+//
+// function isSubstring(searchString, subString) {
+//   If searchString.(subString)
+// }
+// Write a function `echo` that takes in a string and returns that string "echo-ized".
+//
+// Examples:
+// echo("Mom!"); // => "MOM! ... Mom! ... mom!"
+// echo("hey"); // => "HEY ... hey ... hey"
+// echo("JUMp"); // => "JUMP ... JUMp ... jump"
+//
+function echo(string) {
+  
 }
-whisper("THIS IS A LIBRARY!")
+// Write a function `isEven` that takes in a number and returns `true` if the number
+// is even, `false` otherwise. Write `isEven` by using the `isOdd` function you
+// made previously. HINT: you can call `isOdd` from within `isEven`.
+//
+// Examples:
+// isEven(2); // => true
+// isEven(5); // => false
+// function isEven(num) {
+//   if (num % 2 === 0){
+//     console.log("isEven")
+//   } else {
+//     console.log("isOdd")
+//   }
+// }
+// isEven(5)
+// isEven(6)
