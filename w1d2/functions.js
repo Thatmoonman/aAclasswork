@@ -109,15 +109,18 @@ let average = (num1, num2) => {
 // `subString`. The function should return `true` if `subString` is a part of the
 // `searchString`, `false` otherwise.
 // Write two versions of this function, using conditionals and without using conditionals
-//
+
 // Examples:
-// isSubstring("The cat went to the store", "he cat went"); // => true
-// isSubstring("Time to program", "time"); // => true
-// isSubstring("Jump for joy", "joys"); // => false
-//
-// function isSubstring(searchString, subString) {
-//   If searchString.(subString)
-// }
+console.log(isSubstring("The cat went to the store", "he cat went")); // => true
+console.log(isSubstring("Time to program", "time")); // => true
+console.log(isSubstring("Jump for joy", "joys")); // => false
+
+function isSubstring(searchString, subString) {
+  return searchString.toLowerCase().indexOf(subString) > -1
+}
+
+// console.log(isSubstring())
+
 // Write a function `echo` that takes in a string and returns that string "echo-ized".
 //
 // Examples:
@@ -163,12 +166,12 @@ let average = (num1, num2) => {
 // averageOfFour(10, 10, 15, 5); // => 10
 // averageOfFour(3, 10, 11, 4); // => 7
 // averageOfFour(1, 2, 3, 4); // => 2.5
-function averageOfFour(num1,num2,num3,num4) {
-  let avg = sum(num1,num2,num3,num4)/4
-  return avg
-}
-//return variable, console log function
-function sum(num1,num2,num3,num4) {
-return num1+num2+num3+num4
-}
-console.log(averageOfFour(1,2,3,4))
+// function averageOfFour(num1,num2,num3,num4) {
+//   let avg = sum(num1,num2,num3,num4)/4
+//   return avg
+// }
+// //return variable, console log function
+// function sum(num1,num2,num3,num4) {
+// return num1+num2+num3+num4
+// }
+// console.log(averageOfFour(1,2,3,4))
