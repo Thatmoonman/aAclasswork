@@ -9,7 +9,7 @@
 */
 
 function tripler(array) {
-  // your code here...
+  return array.map(ele => ele*3)
 }
 
 
