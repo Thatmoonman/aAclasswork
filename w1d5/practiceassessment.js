@@ -94,29 +94,43 @@ function everyOtherWord(sentence) {
 // Example 2
 // var words = "Go to the store and grab the following: milk, bread, run, and cake";
 // wordYeller(words) === "Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!"; // => true
-function wordYeller(sent) {
-    let words = sent.split("")
-    let marks = [",",".","!","?",";",":"]
-    let yell = []
-    for (i=0; i<words.length; i++) {
-        if (marks.indexOf(words[i]) !== -1) {
-        yell.push(words[i] + " ")
-        i++
-        } else {
-            if (words[i].indexOf(" ") !== -1) {
-                yell.push("!" + words[i])
-            }
-        }
-        yell.push(words[i])
-    }
-    if (marks.indexOf(yell[yell.length-1]) !== -1) {
-        yell.push("!")
-    }
-    return yell.join("")
-}
+// function wordYeller(sent) {
+//     let words = sent.split("")
+//     let marks = [",",".","!","?",";",":"]
+//     let yell = []
+//     for (i=0; i<words.length; i++) {
+//         if (marks.indexOf(words[i]) !== -1) {
+//         yell.push(words[i] + " ")
+//         i++
+//         } else {
+//             if (words[i].indexOf(" ") !== -1) {
+//                 yell.push("!" + words[i])
+//             }
+//         }
+//         yell.push(words[i])
+//     }
+//     console.log(marks.indexOf(yell[yell.length - 1]))
+//     if (marks.indexOf(yell[yell.length-1]) === -1) {
+//         yell.push("!")
+//     }
+//     return yell.join("")
+// }
 
-//console.log(wordYeller("Stop it now! Please, wont you stop?"));
-//console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+console.log(wordYeller("Stop it now! Please, wont you stop?"));
+console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+
+function wordYeller(sent) {
+    let words = sent.split(' ')
+    let marks = ',.!?;:';
+
+    return words.map(word => {
+        if (!marks.includes(word[word.length - 1])) {
+            return word + '!'
+        } else {
+            return word
+        }
+    }).join(' ')
+}
 
 // Problem 7
 // Write a function `arraySubstring(words, str)` that takes in an array of
@@ -129,7 +143,7 @@ function wordYeller(sent) {
 function arraySubstring(words,str) {
     
 }
-console.log(arraySubstring(["hello", "history", "helix", "hellos"],"hel"))
+//console.log(arraySubstring(["hello", "history", "helix", "hellos"],"hel"))
 // => [true, false, true, true]
-console.log(arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre"))
+//console.log(arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre"))
 // => [true, false, false, true]
