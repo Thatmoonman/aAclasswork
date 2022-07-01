@@ -116,8 +116,8 @@ function everyOtherWord(sentence) {
 //     return yell.join("")
 // }
 
-console.log(wordYeller("Stop it now! Please, wont you stop?"));
-console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+//console.log(wordYeller("Stop it now! Please, wont you stop?"));
+//console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
 
 function wordYeller(sent) {
     let words = sent.split(' ')
@@ -141,9 +141,36 @@ function wordYeller(sent) {
 // Examples:
 //
 function arraySubstring(words,str) {
-    
+    return words.map(word => {
+        return word.includes(str)
+    })
 }
 //console.log(arraySubstring(["hello", "history", "helix", "hellos"],"hel"))
 // => [true, false, true, true]
 //console.log(arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre"))
 // => [true, false, false, true]
+
+//Problem 8
+// Write a function evenCaps(sentence) that takes in a sentence as an
+// argument and returns the same string with each even index being
+// capitalized. Index 0 counts as even.
+//
+// Examples:
+//
+function evenCaps(sentence) {
+    let evens = sentence.split("")
+    let caps = []
+    caps.push(evens[0])
+    for (i=1; i<evens.length; i++) {
+        if (i % 2 !== 0) {
+            caps.push(evens[i])
+        } else {
+            caps.push(evens[i].toUpperCase())
+        }
+    }
+    return caps.join("")
+}
+console.log(evenCaps("Tom got a small piece of pie"))
+// => "ToM GoT A SmAlL PiEcE Of pIe"
+console.log(evenCaps("the book is in front of the table"))
+// => "ThE BoOk iS In fRoNt oF ThE TaBlE"
