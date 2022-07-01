@@ -96,7 +96,7 @@ function everyOtherWord(sentence) {
 // wordYeller(words) === "Go! to! the! store! and! grab! the! following: milk, bread, run, and! cake!"; // => true
 function wordYeller(sent) {
     let words = sent.split("")
-    let marks = [",.!?;:"]
+    let marks = [",",".","!","?",";",":"]
     let yell = []
     for (i=0; i<words.length; i++) {
         if (marks.indexOf(words[i]) !== -1) {
@@ -109,8 +109,27 @@ function wordYeller(sent) {
         }
         yell.push(words[i])
     }
+    if (marks.indexOf(yell[yell.length-1]) !== -1) {
+        yell.push("!")
+    }
     return yell.join("")
 }
 
-console.log(wordYeller("Stop it now! Please, wont you stop?"));
-console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+//console.log(wordYeller("Stop it now! Please, wont you stop?"));
+//console.log(wordYeller("Go to the store and grab the following: milk, bread, run, and cake"));
+
+// Problem 7
+// Write a function `arraySubstring(words, str)` that takes in an array of
+// strings and a string as arguments and returns an array where each element is
+// replaced with true if the string is a substring of the element and false if
+// it is not.
+//
+// Examples:
+//
+function arraySubstring(words,str) {
+    
+}
+console.log(arraySubstring(["hello", "history", "helix", "hellos"],"hel"))
+// => [true, false, true, true]
+console.log(arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre"))
+// => [true, false, false, true]
