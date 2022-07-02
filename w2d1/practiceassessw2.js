@@ -88,20 +88,74 @@ abbreviate('hello world'); // => 'hll wrld'
 abbreviate('how are you'); // => 'how are you'
 ***********************************************************************/
 
-function abbreviate(sentence) {
-    let words = sentence.split(" ")
-    let noVows = []
+function noVowels(letterArray) {
+    let vowels = "aeiou"
+    let newWord = []
 
-    for (i=0; i<words.length; i++) {
-        let letters = words[i].split("")
-        if (letters.length >= 4) {
-            
+    for (q=0; q<letterArray.length; q++) {
+        if (vowels.includes(letterArray[q])) {
+            continue
+        } else {
+            newWord.push(letterArray[q])
         }
     }
+    return newWord.join("")
 
 }
 
-console.log(abbreviate('bootcamp prep is fun')); // => 'btcmp prep is fun'
-console.log(abbreviate('programming is fantastic')); // => 'prgrmmng is fntstc'
-console.log(abbreviate('hello world')); // => 'hll wrld'
-console.log(abbreviate('how are you')); // => 'how are you'
+function abbreviate(sentence) {
+    let words = sentence.split(" ")
+    let abbrLetters = []
+    let abbrWords = []
+
+
+    for(i=0; i<words.length; i++) {
+        let letters = words[i].split("")
+
+        if (letters.length > 4) {
+            abbr = noVowels(letters)
+            abbrLetters.push(abbr)
+        } else {
+            abbr = letters.join("")
+            abbrLetters.push(abbr)
+        }
+
+    }
+    return abbrWords = abbrLetters.join(" ")
+
+}
+
+// console.log(abbreviate('bootcamp prep is fun')); // => 'btcmp prep is fun'
+// console.log(abbreviate('programming is fantastic')); // => 'prgrmmng is fntstc'
+// console.log(abbreviate('hello world')); // => 'hll wrld'
+// console.log(abbreviate('how are you')); // => 'how are you'
+
+//Problem 5
+/***********************************************************************
+Write a function `firstLastCap(sentence)` that takes in a sentence and
+returns a new sentence where the first and last letters of each word is
+uppercase. All other characters should be lowercase.
+
+Examples:
+
+firstLastCap('hello BOOTCAMP PrEp'); // =>'HellO BootcamP PreP'
+firstLastCap('what is on the radio'); // =>'WhaT IS ON ThE RadiO'
+***********************************************************************/
+function firstLastCap(sentence) {
+    let words = sentence.split(" ")
+    let newSentence = []
+
+    for (i=0; i<words.length; i++) {
+        let letters = words[i]
+        let firstLetter = letters[0].toUpperCase()
+        let middleLetter = letters.slice(1,-1).toLowerCase()
+        let lastLetter = letters[letters.length-1].toUpperCase()
+        newSentence.push(firstLetter+middleLetter+lastLetter)
+    }
+    
+    return newSentence.join(" ")
+}
+
+
+console.log(firstLastCap('hello BOOTCAMP PrEp')); // =>'HellO BootcamP PreP'
+console.log(firstLastCap('what is on the radio')); // =>'WhaT IS ON ThE RadiO'
