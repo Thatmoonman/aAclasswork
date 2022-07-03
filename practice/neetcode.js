@@ -72,32 +72,35 @@ function twoNumbers(nums,target) {
 
 //***Need to learn to make an object KEY***
 
-function anagram(stringS,stringT) {
-    let substringS = stringS.split("")
-    let substringT = stringT.split("")
+// function anagram(stringS,stringT) {
+//     let substringS = stringS.split("")
+//     let substringT = stringT.split("")
 
-    for (i=0; i<substringS.length; i++) {
-        return (substringS.includes(substringT[i]))
-    }
-}
+//     for (i=0; i<substringS.length; i++) {
+//         return (substringS.includes(substringT[i]))
+//     }
+// }
 
 function groupAnagrams(str) {
-    let groups = []
-    
-    for (q=0;q<str.length;q++) {
-        let word = str[q]
-        let smallGroup = []
-        
-        for (n=0;n<str.length;n++) {
-            let otherWord = str[n]
+    let group = []
 
-            if (smallGroup.includes(otherWord) === false && anagram(word,otherWord) === true) {
-                smallGroup.push(otherWord)                
+    for (i=0;i<str.length;i++) {
+        let word1 = str[i].split("")
+        let wordGroup = []
+
+        for (n=i;n<str.length;n++) {
+            let word2 = str[n].split("")
+
+            if (wordGroup.includes(word1) === false) {
+                wordGroup.push(word1.join(""))
+            } else if (word1.includes(word2) === true && wordGroup.includes(word2) === false) {
+                wordGroup.push(word2.join(""))
             }
+            group.push(wordGroup.join(","))
         }
-        groups.push(smallGroup)
     }
-    return groups
+    return group
+    
 }
 
 // Example 1:
@@ -146,12 +149,52 @@ function palindrome(str) {
  
 
 // Example 1:
-console.log(palindrome("A man, a plan, a canal: Panama")) //Output: true
+// console.log(palindrome("A man, a plan, a canal: Panama")) //Output: true
 // Explanation: "amanaplanacanalpanama" is a palindrome.
 // Example 2:
-console.log(palindrome("race a car")) //Output: false
+// console.log(palindrome("race a car")) //Output: false
 // Explanation: "raceacar" is not a palindrome.
 // Example 3:
-console.log(palindrome(" ")) //Output: true
+// console.log(palindrome(" ")) //Output: true
 //Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome
+
+// Problem 6
+// You are given an array prices where prices[i] is the price of a given stock on the ith day.
+// You want to maximize your profit by choosing a single day to buy one stock 
+//and choosing a different day in the future to sell that stock.
+// Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+function prices(day) {
+    let buyPrice = 10
+    let sellPrice = 0
+
+    for (i=0; i<day.length; i++) {
+        let price = day[i]
+
+        if (price < buyPrice) {
+             buyPrice = price
+        }
+    }
+    
+    for (n=day.length-1; n>=0; n--) {
+        let price = day[n]
+
+        if (price > sellPrice) {
+            sellPrice = price
+        }
+    }
+    if (sellPrice>buyPrice && day.indexOf(sellPrice)>day.indexOf(buyPrice)) {
+        return sellPrice-buyPrice
+    } else {
+        return 0
+    }
+}
+ 
+
+// Example 1:
+console.log(prices([7,1,5,3,6,4])) //Output: 5
+// Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+// Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+// Example 2:
+console.log(prices([7,6,4,3,1])) //Output: 0
+// Explanation: In this case, no transactions are done and the max profit = 0.
