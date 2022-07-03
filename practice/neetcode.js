@@ -159,42 +159,33 @@ function palindrome(str) {
 //Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome
 
-// Problem 6
+// Problem 6 ***need to create an object?**
 // You are given an array prices where prices[i] is the price of a given stock on the ith day.
 // You want to maximize your profit by choosing a single day to buy one stock 
 //and choosing a different day in the future to sell that stock.
 // Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
 function prices(day) {
-    let buyPrice = 10
-    let sellPrice = 0
-
-    for (i=0; i<day.length; i++) {
-        let price = day[i]
-
-        if (price < buyPrice) {
-             buyPrice = price
-        }
-    }
+let buyPrice = day[0]
+let sellPrice = day[day.length-1]
     
-    for (n=day.length-1; n>=0; n--) {
-        let price = day[n]
-
-        if (price > sellPrice) {
-            sellPrice = price
+    for (i=0;i<day.length;i++) {
+        let price = day[i]
+        
+        if (price<buyPrice && day.indexOf(buyPrice)<day.indexOf(sellPrice)) {
+            let buyPrice = price
+        } else if (price>sellPrice && day.indexOf(buyPrice)>day.indexOf(sellPrice)) {
+            let sellPrice = price
         }
     }
-    if (sellPrice>buyPrice && day.indexOf(sellPrice)>day.indexOf(buyPrice)) {
-        return sellPrice-buyPrice
-    } else {
-        return 0
-    }
+    return (sellPrice-buyPrice)
 }
  
 
 // Example 1:
-console.log(prices([7,1,5,3,6,4])) //Output: 5
+// console.log(prices([7,1,5,3,6,4])) //Output: 5
 // Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 // Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 // Example 2:
-console.log(prices([7,6,4,3,1])) //Output: 0
+// console.log(prices([7,6,4,3,1])) //Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
