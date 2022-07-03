@@ -1,4 +1,4 @@
-// Problem 1
+// Problem 1 - E
 // Given an integer array nums, return true if any value appears at least twice in the array
 // and return false if every element is distinct.
 
@@ -23,7 +23,7 @@ function duplicates(arrayNums) {
 // Example 3:
 // console.log(duplicates([1,1,1,3,3,4,3,2,4,2])) // Output: true
 
-// Problem 2
+// Problem 2 - E
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
@@ -41,7 +41,7 @@ function duplicates(arrayNums) {
 // Example 2:
 // console.log(anagram("rat","car")) //Output: false
 
-//Problem 3
+//Problem 3 - E
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 // You may assume that each input would have exactly one solution, and you may not use the same element twice.
 // You can return the answer in any order.
@@ -65,7 +65,7 @@ function twoNumbers(nums,target) {
 // Example 3:
 // console.log(twoNumbers([3,3], 6)) //Output: [0,1]
 
-//Problem 4
+//Problem 4 - M
 // Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, 
 //typically using all the original letters exactly once.
@@ -101,8 +101,57 @@ function groupAnagrams(str) {
 }
 
 // Example 1:
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+// console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 // Example 2:
-console.log(groupAnagrams([""])) //Output: [[""]]
+// console.log(groupAnagrams([""])) //Output: [[""]]
 // Example 3:
-console.log(groupAnagrams(["a"])) //Output: [["a"]]
+// console.log(groupAnagrams(["a"])) //Output: [["a"]]
+
+//Problem 5 - E
+// A phrase is a palindrome if, after converting all uppercase letters into lowercase letters 
+//and removing all non-alphanumeric characters, it reads the same forward and backward.
+//Alphanumeric characters include letters and numbers.
+// Given a string s, return true if it is a palindrome, or false otherwise.
+function noChars(array) {
+    let chars = ",.;:?! "
+    let noChar = []
+
+    for (i=0;i<array.length;i++) {
+        let letter = array[i].toLowerCase()
+         
+        if (chars.includes(letter) !== true) {
+            noChar.push(letter)
+        }
+    }
+    return noChar
+}
+
+function palindrome(str) {
+    let string = str.split("")
+  
+    if (string.length <= 1) {
+        return true
+
+    } else {
+        let pal = noChars(string)
+
+        for (i=0;i<pal.length;i++) {
+            if (pal[i].includes(pal[pal.length-(1+i)]) !== true) {
+                return false
+            }
+        }
+    }
+    return true
+}
+ 
+
+// Example 1:
+console.log(palindrome("A man, a plan, a canal: Panama")) //Output: true
+// Explanation: "amanaplanacanalpanama" is a palindrome.
+// Example 2:
+console.log(palindrome("race a car")) //Output: false
+// Explanation: "raceacar" is not a palindrome.
+// Example 3:
+console.log(palindrome(" ")) //Output: true
+//Explanation: s is an empty string "" after removing non-alphanumeric characters.
+// Since an empty string reads the same forward and backward, it is a palindrome
