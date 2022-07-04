@@ -80,31 +80,25 @@ function twoNumbers(nums,target) {
 //         return (substringS.includes(substringT[i]))
 //     }
 // }
+function alphabet(word) {
+    console.log(word)
+    // return word.split("").sort().join("")    
+}
 
-function groupAnagrams(str) {
+function groupAnagrams(array) {
+    array.map(alphabet(array) {
+        return letters})
     let group = []
-
-    for (i=0;i<str.length;i++) {
-        let word1 = str[i].split("")
-        let wordGroup = []
-
-        for (n=i;n<str.length;n++) {
-            let word2 = str[n].split("")
-
-            if (wordGroup.includes(word1) === false) {
-                wordGroup.push(word1.join(""))
-            } else if (word1.includes(word2) === true && wordGroup.includes(word2) === false) {
-                wordGroup.push(word2.join(""))
-            }
-            group.push(wordGroup.join(","))
-        }
+    console.log(letters)
+    for (i=0;i<array.length;i++) {
+        
     }
-    return group
+    return letters
     
 }
 
 // Example 1:
-// console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 // Example 2:
 // console.log(groupAnagrams([""])) //Output: [[""]]
 // Example 3:
@@ -164,7 +158,18 @@ function palindrome(str) {
 // You want to maximize your profit by choosing a single day to buy one stock 
 //and choosing a different day in the future to sell that stock.
 // Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+function sell(array) {
+    let lowNum = array[array.length-1]
 
+    for (i=0;i<array.length;i++) {
+        let p = array[i]
+
+        if (p<lowNum) {
+            let lowNum = p
+        }
+    }
+    return lowNum
+}
 function prices(day) {
 let buyPrice = day[0]
 let sellPrice = day[day.length-1]
@@ -174,8 +179,10 @@ let sellPrice = day[day.length-1]
         
         if (price<buyPrice && day.indexOf(buyPrice)<day.indexOf(sellPrice)) {
             let buyPrice = price
-        } else if (price>sellPrice && day.indexOf(buyPrice)>day.indexOf(sellPrice)) {
-            let sellPrice = price
+
+
+        // } else if (price>sellPrice && day.indexOf(buyPrice)>day.indexOf(sellPrice)) {
+        //     let sellPrice = price
         }
     }
     return (sellPrice-buyPrice)
