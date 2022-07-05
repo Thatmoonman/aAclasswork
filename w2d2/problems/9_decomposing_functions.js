@@ -45,21 +45,34 @@ firstNPrimes(0); // => []
 firstNPrimes(1); // => [2]
 firstNPrimes(4); // => [2, 3, 5, 7]
 ***********************************************************************/
+function isPrime(number) {
+  if (number<2) {
+    return false
+  } else {
+    for (i=2;i<number;i++) {
+      if (number % i === 0) {
+        return false
+      }
+    }
+  }
+  return true
+}
 
 function firstNPrimes(n) {
   let array = []
 
-  for (i=0; n>array.length; i++) {
-    if (isPrime(i) === true) {
-      array.push[i]
+  for (q=2; array.length<=n-1; q++) {
+    if (isPrime(q) === true) {
+      array.push(q)
     }
   }
   return array
+
 }
 
-console.log(firstNPrimes(0)); // => []
-console.log(firstNPrimes(1)); // => [2]
-console.log(firstNPrimes(4)); // => [2, 3, 5, 7]
+// console.log(firstNPrimes(0)); // => []
+// console.log(firstNPrimes(1)); // => [2]
+// console.log(firstNPrimes(4)); // => [2, 3, 5, 7]
 /***********************************************************************
 Using `firstNPrimes`, write a function `sumOfNPrimes(n)` that returns
 the sum of the first `n` prime numbers.
@@ -70,16 +83,40 @@ sumOfNPrimes(0); // => 0
 sumOfNPrimes(1); // => 2
 sumOfNPrimes(4); // => 17
 ***********************************************************************/
+function isPrime(number) {
+  if (number<2) {
+    return false
+  } else {
+    for (i=2;i<number;i++) {
+      if (number % i === 0) {
+        return false
+      }
+    }
+  }
+  return true
+}
+
+function firstNPrimes(n) {
+  let array = []
+
+  for (q=2; array.length<=n-1; q++) {
+    if (isPrime(q) === true) {
+      array.push(q)
+    }
+  }
+  return array
+
+}
 
 function sumOfNPrimes(n) {
-  let sums = array.map(firstNPrimes(n))
-  let total
+  let primes = firstNPrimes(n)
+  let sum = 0
 
-  for (i=0;i<sums.length;i++) {
-    total += sums[i]
+  for (p=0;p<primes.length;p++) {
+    sum += primes[p]
   }
-  return total
-
+  return sum
+  
 }
 
 console.log(sumOfNPrimes(0)); // => 0
