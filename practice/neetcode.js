@@ -167,7 +167,7 @@ function palindrome(str) {
 //Explanation: s is an empty string "" after removing non-alphanumeric characters.
 // Since an empty string reads the same forward and backward, it is a palindrome
 
-// Problem 6 ***need to create an object?**
+// Problem 6 
 // You are given an array prices where prices[i] is the price of a given stock on the ith day.
 // You want to maximize your profit by choosing a single day to buy one stock 
 //and choosing a different day in the future to sell that stock.
@@ -205,3 +205,47 @@ function prices(day) {
 // Example 2:
 // console.log(prices([7,6,4,3,1])) //Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
+
+// Problem 7
+// Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+// An input string is valid if:
+
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+function validString(string) {
+    let str = string.split("")
+    let open = '([{'
+    let close = ')]}'
+    
+
+    for (i=0;i<str.length; i++) {
+        let open = str[i]
+        for (j=i+1;j<str.length;j++) {
+            let close = str[j]
+            
+            if (open === '(' && close !== ')') {
+                return false
+            } else if (open === '[' && close !== ']') {
+                return false
+            } else if (open === '{') {
+                return false
+            } else {
+                return true
+            }
+        }
+    }
+}
+
+// Example 1:
+s = "()"
+console.log(validString(s))
+// Output: true
+// Example 2:
+s = "()[]{}"
+console.log(validString(s))
+// Output: true
+// Example 3:
+s = "(]"
+console.log(validString(s))
+// Output: false
