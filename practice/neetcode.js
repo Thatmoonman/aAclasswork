@@ -85,26 +85,38 @@ function alphabet(word) {
 }
 
 function groupAnagrams(words) {
+    
     let letters = words.map(word => alphabet(word))
-    let group = []
-    let grams = []
-    group.push(letters[0])
-
-    for (i=0;i<words.length;i++) {
-        if (group.includes(letters) && words.indexOf(i) !== letters.indexOf(i)) {
-            group.push(words[i])
+    let keys = []
+    
+    for (i=0;i<letters.length;i++) {
+        if (keys.includes(letters[i]) === false) {
+            keys.push(letters[i])
         }
     }
-    return  group
-    
+    let anagrams = []
+
+    for (n=0;n<keys.length;n++) {
+        let key = keys[n]
+        let groups = []
+
+        for (p=0;p<words.length;p++) {
+            let test = words[p]
+            if (key === alphabet(test)) {
+                groups.push(test)
+            }
+        }
+        anagrams.push(groups)
+    }
+    return anagrams
 }
 
 // Example 1:
-// console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 // Example 2:
-// console.log(groupAnagrams([""])) //Output: [[""]]
+console.log(groupAnagrams([""])) //Output: [[""]]
 // Example 3:
-// console.log(groupAnagrams(["a"])) //Output: [["a"]]
+console.log(groupAnagrams(["a"])) //Output: [["a"]]
 
 //Problem 5 - E
 // A phrase is a palindrome if, after converting all uppercase letters into lowercase letters 
@@ -187,9 +199,9 @@ function prices(day) {
  
 
 // Example 1:
-console.log(prices([7,1,5,3,6,4])) //Output: 5
+// console.log(prices([7,1,5,3,6,4])) //Output: 5
 // Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 // Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 // Example 2:
-console.log(prices([7,6,4,3,1])) //Output: 0
+// console.log(prices([7,6,4,3,1])) //Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
