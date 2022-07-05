@@ -255,3 +255,6 @@ function valueCounter(obj, val){
 
 // pairs = {Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne'}
 // console.log(valueCounter(pairs, 'Roman')) // => 2
+
+
+
