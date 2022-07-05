@@ -43,13 +43,12 @@ function divisibleByThreePairSum(array) {
 
     for (i=0;i<array.length;i++) {
         let firstPair = array[i]
+
         for (j=i+1;j<array.length;j++) {
             let secondPair = array[j]
-            let pairs = []
 
             if ((firstPair + secondPair) % 3 === 0) {
-                pairs.push(i, j)
-                threes.push(pairs)
+                threes.push([i,j])
             }
         }
     }
@@ -71,16 +70,14 @@ input arrays have the same length.
 ***********************************************************************/
 
 function zipArray(arr1, arr2) {
-    let twoDee = []
+    let pairs = []
 
     for (i=0;i<arr1.length;i++) {
         let one = arr1[i]
         let two = arr2[i]
-        let pairs = []
-        pairs.push(one,two)
-        twoDee.push(pairs)
+        pairs.push([one,two])
     }
-    return twoDee
+    return pairs
 }
 
 // var a1 = ['a', 'b', 'c', 'd'];
@@ -100,9 +97,9 @@ function twoDimensionalTotal(array) {
 
     for(i=0;i<array.length;i++) {
         let set = array[i]
+
         for (j=0;j<set.length;j++) {
-            let nums = set[j]
-            sums += nums
+            sums += set[j]
         }
     }
     return sums
@@ -148,7 +145,6 @@ function countInnerElement(arr) {
             } else {
                 repeats[num] = 1
             }
-            
         }
     }
     return repeats
@@ -190,11 +186,9 @@ function twoDiff(array){
         for (j=i+1;j<array.length;j++) {
             let one = array[i]
             let two = array[j]
-            let pairs = []
 
             if (one - two === 2 || two - one === 2) {
-                pairs.push(i,j)
-                differences.push(pairs)
+                differences.push([i,j])
             }
         }
     }
@@ -253,11 +247,11 @@ function valueCounter(obj, val){
   return total
 }
 
-obj1 = {1: 'Anne', 2: 'Alvin', 3: 'Anne', 4: 'Anne'}
-console.log(valueCounter(obj1, 'Anne')) // => 3
+// obj1 = {1: 'Anne', 2: 'Alvin', 3: 'Anne', 4: 'Anne'}
+// console.log(valueCounter(obj1, 'Anne')) // => 3
 
-obj2 = {Anne: 50, Alvin: 1, JJ: 100, Roman: 100}
-console.log(valueCounter(obj2, 88)) // => 0
+// obj2 = {Anne: 50, Alvin: 1, JJ: 100, Roman: 100}
+// console.log(valueCounter(obj2, 88)) // => 0
 
-pairs = {Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne'}
-console.log(valueCounter(pairs, 'Roman')) // => 2
+// pairs = {Anne: 'Roman', Alvin: 'Roman', JJ: 'Anne', Roman: 'Anne'}
+// console.log(valueCounter(pairs, 'Roman')) // => 2
