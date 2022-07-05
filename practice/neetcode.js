@@ -81,24 +81,26 @@ function twoNumbers(nums,target) {
 //     }
 // }
 function alphabet(word) {
-    console.log(word)
-    // return word.split("").sort().join("")    
+    return word.split("").sort().join("")    
 }
 
-function groupAnagrams(array) {
-    array.map(alphabet(array) {
-        return letters})
+function groupAnagrams(words) {
+    let letters = words.map(word => alphabet(word))
     let group = []
-    console.log(letters)
-    for (i=0;i<array.length;i++) {
-        
+    let grams = []
+    group.push(letters[0])
+
+    for (i=0;i<words.length;i++) {
+        if (group.includes(letters) && words.indexOf(i) !== letters.indexOf(i)) {
+            group.push(words[i])
+        }
     }
-    return letters
+    return  group
     
 }
 
 // Example 1:
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+// console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 // Example 2:
 // console.log(groupAnagrams([""])) //Output: [[""]]
 // Example 3:

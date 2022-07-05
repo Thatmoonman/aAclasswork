@@ -19,9 +19,22 @@ isPrime(303212); // => false
 ***********************************************************************/
 
 function isPrime(number) {
-
+  if (number<2) {
+    return false
+  } else {
+    for (i=2;i<number;i++) {
+      if (number % i === 0) {
+        return false
+      }
+    }
+  }
+  return true
 }
 
+// console.log(isPrime(2)); // => true
+// console.log(isPrime(1693)); // => true
+// console.log(isPrime(15)); // => false
+// console.log(isPrime(303212)); // => false
 /***********************************************************************
 Using the `isPrime` function you made, write a function `firstNPrimes(n)`
 that returns an array of the first `n` prime numbers.
@@ -34,9 +47,19 @@ firstNPrimes(4); // => [2, 3, 5, 7]
 ***********************************************************************/
 
 function firstNPrimes(n) {
+  let array = []
 
+  for (i=0; n>array.length; i++) {
+    if (isPrime(i) === true) {
+      array.push[i]
+    }
+  }
+  return array
 }
 
+console.log(firstNPrimes(0)); // => []
+console.log(firstNPrimes(1)); // => [2]
+console.log(firstNPrimes(4)); // => [2, 3, 5, 7]
 /***********************************************************************
 Using `firstNPrimes`, write a function `sumOfNPrimes(n)` that returns
 the sum of the first `n` prime numbers.
@@ -49,12 +72,16 @@ sumOfNPrimes(4); // => 17
 ***********************************************************************/
 
 function sumOfNPrimes(n) {
+  let sums = array.map(firstNPrimes(n))
+  let total
+
+  for (i=0;i<sums.length;i++) {
+    total += sums[i]
+  }
+  return total
 
 }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-module.exports = {
-  isPrime: isPrime,
-  firstNPrimes: firstNPrimes,
-  sumOfNPrimes: sumOfNPrimes
-};
+console.log(sumOfNPrimes(0)); // => 0
+console.log(sumOfNPrimes(1)); // => 2
+console.log(sumOfNPrimes(4)); // => 17

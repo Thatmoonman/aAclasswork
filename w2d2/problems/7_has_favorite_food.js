@@ -23,8 +23,21 @@ hasFavoriteFood(person, 'fish'); // => false
 ***********************************************************************/
 
 function hasFavoriteFood(obj, food) {
-
+  return (obj.favoriteFoods.indexOf(food) !== -1)
 }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-module.exports = hasFavoriteFood;
+var dog = {
+  name: 'Fido',
+  favoriteFoods: ['chicken', 'sausage', 'scooby snacks']
+}
+
+console.log(hasFavoriteFood(dog, 'sausage')); // => true
+console.log(hasFavoriteFood(dog, 'cat food')); // => false
+
+var person = {
+  name: 'Al',
+  favoriteFoods: ['pizza', 'burgers', 'ramen']
+}
+
+console.log(hasFavoriteFood(person, 'burgers')); // => true
+console.log(hasFavoriteFood(person, 'fish')); // => false

@@ -11,8 +11,9 @@ doesKeyExist(obj1, 'name'); // => false
 ***********************************************************************/
 
 function doesKeyExist(obj, key) {
-
+    return (obj[key] !== undefined)
 }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-module.exports = doesKeyExist;
+var obj1 = {bootcamp: 'App Academy', course: 'Bootcamp Prep'}
+console.log(doesKeyExist(obj1, 'course')); // => true
+console.log(doesKeyExist(obj1, 'name')); // => false
