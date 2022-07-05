@@ -160,41 +160,36 @@ function palindrome(str) {
 // You want to maximize your profit by choosing a single day to buy one stock 
 //and choosing a different day in the future to sell that stock.
 // Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
-function sell(array) {
-    let lowNum = array[array.length-1]
 
-    for (i=0;i<array.length;i++) {
-        let p = array[i]
-
-        if (p<lowNum) {
-            let lowNum = p
-        }
-    }
-    return lowNum
-}
 function prices(day) {
-let buyPrice = day[0]
-let sellPrice = day[day.length-1]
-    
-    for (i=0;i<day.length;i++) {
-        let price = day[i]
-        
-        if (price<buyPrice && day.indexOf(buyPrice)<day.indexOf(sellPrice)) {
-            let buyPrice = price
+    let sales = {}
+    let difference = 0
 
+    for  (i=0;i<day.length-1;i++) {
+        buyDay = day[i]
 
-        // } else if (price>sellPrice && day.indexOf(buyPrice)>day.indexOf(sellPrice)) {
-        //     let sellPrice = price
+        for (n=i+1;n<day.length;n++) {
+            let sellDay = day[n]
+
+            if (sellDay - buyDay > 0 && sellDay - buyDay > difference) {
+            difference = (sellDay - buyDay)
+            sales['difference'] = difference
+            }
         }
     }
-    return (sellPrice-buyPrice)
+    if (sales.difference === undefined) {
+        return 0
+    } else {
+    return sales.difference
+
+    }
 }
  
 
 // Example 1:
-// console.log(prices([7,1,5,3,6,4])) //Output: 5
+console.log(prices([7,1,5,3,6,4])) //Output: 5
 // Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
 // Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 // Example 2:
-// console.log(prices([7,6,4,3,1])) //Output: 0
+console.log(prices([7,6,4,3,1])) //Output: 0
 // Explanation: In this case, no transactions are done and the max profit = 0.
