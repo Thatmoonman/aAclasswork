@@ -35,10 +35,62 @@ titleize("i LOVE; lover of mine", ["love", "of"])
 titleize("shall we dance?", ["dance"])
 => "Shall We dance?"
 ***********************************************************************/
+function removePunctuation(word) {
+    let punctuation = [";", "!", ".", "?", ",", "-"]
+    let letters = word.split("")
+    let newWord = []
+    
+    for (i=0; i<letters.length; i++) {
+        if (punctuation.includes(letters[i])) {
+            continue
+        } else {
+            newWord.push(letters[i])
+        }
+    }
+    return newWord.join("")
+}
 
-function titleize(title, stopWords) {
+function isStopWord(word,stopWords){
+    let noPunc = removePunctuation(word).toLowerCase()
+    
+    if (stopWords.includes(noPunc)) {
+        return true
+    }
+    return false
 
 }
 
+function upperCase(word) {
+    let letters = word.split("")
+    let words = []
+
+    for (i=0;i<letters.length;i++) {
+        if (i===0) {
+            words.push(letters[i].toUpperCase())
+        } else {
+            words.push(letters[i].toLowerCase())
+        }
+    }
+    return words.join("")
+
+}
+
+function titleize(title, stopWords) {
+    let titleWords = title.split(" ")
+    let newTitle = []
+
+    for (let i=0; i<titleWords.length; i++) {
+        let words = titleWords[i]
+
+        if (isStopWord(words,stopWords) === false) {
+            let newWord = upperCase(words)
+            newTitle.push(newWord)
+        } else {
+            let stopW = words.toLowerCase()
+            newTitle.push(stopW)
+        }
+    }
+    return newTitle.join(" ")
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = titleize;
