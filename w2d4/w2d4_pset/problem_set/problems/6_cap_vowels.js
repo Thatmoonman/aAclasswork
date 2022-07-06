@@ -13,6 +13,20 @@ capVowels('boOtCamP PreP'); // => 'bOOtcAmp prEp'
 ***********************************************************************/
 
 function capVowels(string) {
+    let vowels = "aeiou"
+    let word = string.toLowerCase().split("")
+    let newString = []
+
+    for (let i=0;i<word.length;i++) {
+        let letters = word[i]
+
+        if (vowels.includes(letters)){
+            newString.push(letters.toUpperCase())
+        } else {
+        newString.push(letters)
+        }
+    }
+    return newString.join("")
 
 }
 

@@ -14,7 +14,6 @@ function fizzBuzz(max) {
       continue
     } else if (i % 3 === 0 || i % 5 === 0) {
       array.push(i);
-      console.log(array)
     }
   }
   return array;
