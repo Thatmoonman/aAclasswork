@@ -18,4 +18,18 @@ function testObj() {
 
 }
 
-console.log(testObj())
+// console.log(testObj())
+
+// console.log([0,1,2,"something"][3])
+
+let multiArray = [
+    ["a","b","c"],
+    ["1","2","3"],
+    ["g","h"]
+]
+
+for (let i =0; i<multiArray.length; i++) {
+    let innerArray = multiArray[i]
+    for (let j=0; j < innerArray.length; j++)
+    console.log(innerArray[j])
+}
