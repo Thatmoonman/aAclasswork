@@ -63,18 +63,23 @@ function printUniques(names) {
     }
 }
 // ###################################################
-let numbers = [0,2,5,-2,7]
-pairZeroSum(numbers)
+let numbers = [0,2,5,-2,7,-7]
+console.log(pairZeroSum(numbers))
 
 function pairZeroSum(numbers) {
+    array = []
+
     for (let i=0; i<numbers.length; i++){
         let num1 = numbers[i]
+
         for(let j=i+1; j<numbers.length; j++) {
             let num2 = numbers[j]
+
             if (num1 + num2 === 0) {
-                console.log([num1,num2])
+                array.push([num1,num2])
             }
         }
     }
+    return array
 }
 // ###################################################
