@@ -275,7 +275,7 @@ function targetNum(nums,target) {
 // Output: -1
 // Explanation: 2 does not exist in nums so return -1
 
-// Problem 9
+// Problem 9 ***linked lists?*****
 // Given the head of a singly linked list, reverse the list, and return the reversed list.
 function reverse(array) {
     let newAray = []
@@ -300,7 +300,7 @@ function reverse(array) {
 // console.log(reverse(head));
 // Output: []
 
-// Problem 10
+// Problem 10 ***linked lists?*****
 // You are given the heads of two sorted linked lists list1 and list2.
 // Merge the two lists in a one sorted list. 
 // The list should be made by splicing together the nodes of the first two lists.
@@ -309,25 +309,68 @@ function reverse(array) {
 function mergeList(list1,list2) {
     let newList = []
 
-    for (i=0;i<list2.length;i++) {
+    for (i=0;i<list1.length;i++) {
         newList.push(list1[i],list2[i])
-        // newList.push(list2[i])
+        newList.push(list2[i])
     }
     return newList
 } 
 
 // Example 1:
-list1 = [1,2,4]
-list2 = [1,3,4]
-console.log(mergeList(list1,list2));
+// list1 = [1,2,4]
+// list2 = [1,3,4]
+// console.log(mergeList(list1,list2));
 // Output: [1,1,2,3,4,4]
 // Example 2:
-list1 = []
-list2 = []
-console.log(mergeList(list1,list2));
+// list1 = []
+// list2 = []
+// console.log(mergeList(list1,list2));
 // Output: []
 // Example 3:
-list1 = []
-list2 = [0]
-console.log(mergeList(list1,list2));
+// list1 = []
+// list2 = [0]
+// console.log(mergeList(list1,list2));
 // Output: [0]
+
+// Problem 11 - M
+// Given an integer array nums and an integer k, 
+// return the k most frequent elements. You may return the answer in any order.
+
+function frequent(nums,k) {
+    let array = []
+    let obj = {}
+
+    for (i=0; i<nums.length; i++) {
+        let ele = nums[i]
+        if (obj[ele] === undefined) {
+            obj[ele] = 1
+        } else {
+            obj[ele] += 1
+        }
+    }
+    
+    for (j=0;array.length<k;j++){
+        let int = 0
+
+        for (let ele in obj) {
+            if (obj[ele] > int === true && array.includes(parseInt(ele)) === false) {
+                int = obj[ele]
+                num = parseInt(ele)
+            }
+        }
+        array.push(num)
+    }
+    return array
+}
+ 
+
+// Example 1:
+nums = [1,1,1,2,2,3], k = 2
+console.log(frequent(nums,k));
+// Output: [1,2]
+// Example 2:
+Input: nums = [1], k = 1
+console.log(frequent(nums,k));
+// Output: [1]
+nums = [-1,0,-1,4,5,5,5,5,9,10,-1,10], k = 3
+console.log(frequent(nums,k));
