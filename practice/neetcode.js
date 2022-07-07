@@ -349,7 +349,7 @@ function frequent(nums,k) {
         }
     }
     
-    for (j=0;array.length<k;j++){
+    for (j=1; j<=k;j++){
         let int = 0
 
         for (let ele in obj) {
