@@ -112,11 +112,11 @@ function groupAnagrams(words) {
 }
 
 // Example 1:
-console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+// console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"])) //Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
 // Example 2:
-console.log(groupAnagrams([""])) //Output: [[""]]
+// console.log(groupAnagrams([""])) //Output: [[""]]
 // Example 3:
-console.log(groupAnagrams(["a"])) //Output: [["a"]]
+// console.log(groupAnagrams(["a"])) //Output: [["a"]]
 
 //Problem 5 - E
 // A phrase is a palindrome if, after converting all uppercase letters into lowercase letters 
@@ -238,14 +238,41 @@ function validString(string) {
 }
 
 // Example 1:
-s = "()"
-console.log(validString(s))
+// s = "()"
+// console.log(validString(s))
 // Output: true
 // Example 2:
-s = "()[]{}"
-console.log(validString(s))
+// s = "()[]{}"
+// console.log(validString(s))
 // Output: true
 // Example 3:
-s = "(]"
-console.log(validString(s))
+// s = "(]"
+// console.log(validString(s))
 // Output: false
+
+// Problem 8
+// Given an array of integers nums which is sorted in ascending order, and an integer target, 
+// write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.
+// You must write an algorithm with O(log n) runtime complexity.
+
+function targetNum(nums,target) {
+    if (nums.includes(target) === true) {
+        return nums.indexOf(target)
+    } else {
+        return -1
+    }
+}
+ 
+
+// Example 1:
+// nums = [-1,0,3,5,9,12], target = 9
+// console.log(targetNum(nums,target))
+// Output: 4
+// Explanation: 9 exists in nums and its index is 4
+// Example 2:
+// nums = [-1,0,3,5,9,12], target = 2
+// console.log(targetNum(nums,target))
+// Output: -1
+// Explanation: 2 does not exist in nums so return -1
+
+// Problem 9

@@ -61,7 +61,7 @@ function isPrime(number) {
 function firstNPrimes(n) {
   let array = []
 
-  for (q=2; array.length<=n-1; q++) {
+  for (q=2; array.length<n; q++) {
     if (isPrime(q) === true) {
       array.push(q)
     }
@@ -99,9 +99,9 @@ function isPrime(number) {
 function firstNPrimes(n) {
   let array = []
 
-  for (q=2; array.length<=n-1; q++) {
-    if (isPrime(q) === true) {
-      array.push(q)
+  for (j=2; array.length<n; j++) {
+    if (isPrime(j) === true) {
+      array.push(j)
     }
   }
   return array
@@ -112,8 +112,8 @@ function sumOfNPrimes(n) {
   let primes = firstNPrimes(n)
   let sum = 0
 
-  for (p=0;p<primes.length;p++) {
-    sum += primes[p]
+  for (k=0;k<primes.length;k++) {
+    sum += primes[k]
   }
   return sum
   

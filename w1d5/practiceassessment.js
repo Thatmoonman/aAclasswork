@@ -170,7 +170,7 @@ function evenCaps(sentence) {
     }
     return caps.join("")
 }
-console.log(evenCaps("Tom got a small piece of pie"))
+//console.log(evenCaps("Tom got a small piece of pie"))
 // => "ToM GoT A SmAlL PiEcE Of pIe"
-console.log(evenCaps("the book is in front of the table"))
+//console.log(evenCaps("the book is in front of the table"))
 // => "ThE BoOk iS In fRoNt oF ThE TaBlE"
