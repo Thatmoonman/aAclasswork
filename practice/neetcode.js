@@ -276,3 +276,58 @@ function targetNum(nums,target) {
 // Explanation: 2 does not exist in nums so return -1
 
 // Problem 9
+// Given the head of a singly linked list, reverse the list, and return the reversed list.
+function reverse(array) {
+    let newAray = []
+
+    for (i=array.length-1;i>=0;i--) {
+        newAray.push(array[i])
+    }
+    return newAray
+}
+ 
+
+// Example 1:
+// head = [1,2,3,4,5]
+// console.log(reverse(head));
+// Output: [5,4,3,2,1]
+// Example 2:
+// head = [1,2]
+// console.log(reverse(head));
+// Output: [2,1]
+// Example 3:
+// head = []
+// console.log(reverse(head));
+// Output: []
+
+// Problem 10
+// You are given the heads of two sorted linked lists list1 and list2.
+// Merge the two lists in a one sorted list. 
+// The list should be made by splicing together the nodes of the first two lists.
+// Return the head of the merged linked list.
+
+function mergeList(list1,list2) {
+    let newList = []
+
+    for (i=0;i<list2.length;i++) {
+        newList.push(list1[i],list2[i])
+        // newList.push(list2[i])
+    }
+    return newList
+} 
+
+// Example 1:
+list1 = [1,2,4]
+list2 = [1,3,4]
+console.log(mergeList(list1,list2));
+// Output: [1,1,2,3,4,4]
+// Example 2:
+list1 = []
+list2 = []
+console.log(mergeList(list1,list2));
+// Output: []
+// Example 3:
+list1 = []
+list2 = [0]
+console.log(mergeList(list1,list2));
+// Output: [0]
