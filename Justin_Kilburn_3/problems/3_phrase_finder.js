@@ -14,7 +14,16 @@ phraseFinder(['world', 'bootcamp', 'hello', 'prep'], 'hello goodbye') => false
 *******************************************************************************/
 
 function phraseFinder(words, phrase){
-  // your code here...
+  let count = 0
+
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i]
+
+    if (phrase.includes(word)) {
+      count += 1
+    }
+  }
+  return count === 2
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

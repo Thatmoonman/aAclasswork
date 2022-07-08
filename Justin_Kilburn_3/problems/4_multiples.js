@@ -9,7 +9,13 @@ multiples(15, 3) => [ 3, 6, 9, 12 ]
 *******************************************************************************/
 
 function multiples(max, num){
-  // your code here...
+  let array = []
+
+  for (let i = num; i < max; i += num) {
+    array.push(i)
+  }
+  return array
+  
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
