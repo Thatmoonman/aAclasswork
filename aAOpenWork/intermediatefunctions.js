@@ -108,5 +108,59 @@ console.log(isAntiPrime(100))  // false
 console.log(isAntiPrime(136))  // false
 console.log(isAntiPrime(1024)) // false
 ///////////////////////////////////////////////
+function vowelCounter(word) {
+    let vowels = 'aeiou'
+    let letters = word.split("")
+    let count = 0
+    
+    for (let i = 0; i < letters.length; i++) {
+        if (vowels.includes(letters[i]) === true){
+            count++
+        }
+    }
+    return count
+}
 
+function mostVowels(sentence) {
+    let words = sentence.split(" ")
+    let test = 0
+    let most
+    
+    for (let j = 0; j < words.length; j++) {
+        let check = vowelCounter(words[j])
+        if (check > test) {
+            test = check
+            most = words[j]
+        }
+    }
+    return most
+    
+}
+
+console.log(mostVowels("what a wonderful life")); // "wonderful"
 ///////////////////////////////////////////////
+function arraySum(array) {
+    let sum = 0
+    
+    for (let i = 0; i < array.length; i++){
+       sum += array[i]    
+    }
+    return sum
+    
+}
+
+function allElseEqual(arr) {
+   
+   for (let i = 0; i < arr.length; i++) {
+       if (arr[i] === arraySum(arr)/2) {
+           return arr[i]
+           
+       }
+   }
+   return null
+   
+}
+
+console.log(allElseEqual([2, 4, 3, 10, 1])); // 10
+console.log(allElseEqual([6, 3, 5, -9, 1])); // 3
+console.log(allElseEqual([1, 2, 3, 4]));     // null
