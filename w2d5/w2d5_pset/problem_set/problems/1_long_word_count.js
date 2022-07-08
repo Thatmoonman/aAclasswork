@@ -13,7 +13,15 @@ longWordCount("seventy schfifty five"); // => 1
 ***********************************************************************/
 
 function longWordCount(sentence) {
-    
+    let words = sentence.split(" ")
+    let counter = 0
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i][7] !== undefined) {
+            counter += 1
+        }
+    }
+    return counter 
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

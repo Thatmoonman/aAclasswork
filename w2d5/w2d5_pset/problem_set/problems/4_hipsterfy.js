@@ -11,8 +11,26 @@ hipsterfy("towel flicker banana"); // => "towl flickr banan"
 hipsterfy("runner anaconda"); // => "runnr anacond"
 hipsterfy("turtle cheeseburger fries"); // => "turtl cheeseburgr fris"
 ***********************************************************************/
+function hipster(word) {
+    let vowels = 'aeiou'
+    let letters = word.split("")
+
+    for (let i = letters.length-1; i >= 0; i--) {
+        if (vowels.includes(letters[i])) {
+            let newWord = word.slice(0,i) + word.slice(i+1,)
+            return newWord
+        }
+    }
+}
 
 function hipsterfy(sentence) {
+    let words = sentence.split(" ")
+    let newSentence = []
+
+    for (let i = 0; i < words.length; i++) {
+        newSentence.push(hipster(words[i]))
+    }
+    return newSentence.join(" ")
 
 }
 
