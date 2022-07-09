@@ -423,7 +423,13 @@ console.log(exceptProduct(nums))
 
 // A Sudoku board (partially filled) could be valid but is not necessarily solvable.
 // Only the filled cells need to be validated according to the mentioned rules.
- 
+
+function checkRow(num)
+
+function checkColumn(num)
+
+function checkBox(num)
+
 function sudokuChecker(array) {
 
 }
