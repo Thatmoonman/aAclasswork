@@ -461,7 +461,7 @@ function checkBox(board,num,indexColumn,indexRow){
         if (a.includes(indexColumn) === true && a.includes(indexRow) === true) {
             for (let j = 0; j < 3; j++) {
                 for (let k = 0; k < 3; k++) {
-                    if (checkRow(board[0], num, j) === false && ) {
+                    if (checkRow(board[0], num, j) === false) {
                         return false
                     }else if (checkRow(board[1], num, j) === false) {
                         return false
@@ -472,95 +472,7 @@ function checkBox(board,num,indexColumn,indexRow){
                     }
                 }
             }
-        } else if (a.includes(indexColumn) === true && b.includes(indexRow) === true) {
-            for (let j = 3; j < 6; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 0; k < 3; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (a.includes(indexColumn) === true && c.includes(indexRow) === true) {
-            for (let j = 6; j < 9; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 0; k < 3; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (b.includes(indexColumn) === true && a.includes(indexRow) === true) {
-            for (let j = 0; j < 3; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 3; k < 6; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (b.includes(indexColumn) === true && b.includes(indexRow) === true) {
-            for (let j = 3; j < 6; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 3; k < 6; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (b.includes(indexColumn) === true && c.includes(indexRow) === true) {
-            for (let j = 6; j < 9; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 3; k < 6; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (c.includes(indexColumn) === true && a.includes(indexRow) === true) {
-            for (let j = 0; j < 3; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 6; k < 9; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (c.includes(indexColumn) === true && b.includes(indexRow) === true) {
-            for (let j = 3; j < 6; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 6; k < 9; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        } else if (c.includes(indexColumn) === true && c.includes(indexRow) === true) {
-            for (let j = 6; j < 9; j++) {
-                if (checkRow(array, num, j) === false) {
-                    return false
-                }
-            }
-            for (let k = 6; k < 9; k++) {
-                if (checkColumn(board, num, i, k) === false) {
-                    return false
-                }
-            }
-        }
+        } //else if 
         
     }
     return true
@@ -603,7 +515,7 @@ Input: board =
 ,[".","6",".",".",".",".","2","8","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]]
-console.log(sudokuChecker(board))
+// console.log(sudokuChecker(board))
 // Output: true
 // Example 2:
 
@@ -617,6 +529,6 @@ Input: board =
 ,[".","6",".",".",".",".","2","8","."]
 ,[".",".",".","4","1","9",".",".","5"]
 ,[".",".",".",".","8",".",".","7","9"]]
-console.log(sudokuChecker(board))
+// console.log(sudokuChecker(board))
 // Output: false
 // Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
