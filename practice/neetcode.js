@@ -405,12 +405,12 @@ function exceptProduct(array) {
 // Example 1:
 
 
-Input: nums = [1,2,3,4]
-console.log(exceptProduct(nums))
+// Input: nums = [1,2,3,4]
+// console.log(exceptProduct(nums))
 // Output: [24,12,8,6]
 // Example 2:
-Input: nums = [-1,1,0,-3,3]
-console.log(exceptProduct(nums))
+// Input: nums = [-1,1,0,-3,3]
+// console.log(exceptProduct(nums))
 // Output: [0,0,9,0,0]
 
 // Problem 13 - M
@@ -424,19 +424,171 @@ console.log(exceptProduct(nums))
 // A Sudoku board (partially filled) could be valid but is not necessarily solvable.
 // Only the filled cells need to be validated according to the mentioned rules.
 
-function checkRow(num) {
+function checkRow(array,num,index) {
+    for (let d = 0; d < array.length; d++){
+        if (array[d] === num && d !== index) {
+            return false
+        }
+    }
+    return true
+}
+
+function checkColumn(board,num,indexColumn,indexRow){
+    for (let e = 0; e < board.length; e++) {
+        let array = board[e]
+
+        if (e !== indexColumn) {
+            for (let f = 0; f < array.length; f++) {
+
+                if (array[f] === num && array[f] !== indexRow) {
+                    return false
+                }
+            }
+        }
+    }
+    return true
 
 }
 
-function checkColumn(num){
+function checkBox(board,num,indexColumn,indexRow){
+    let a = [1,2,3]
+    let b = [4,5,6]
+    let c = [7,8,9]
+
+    for (let i = 0; i < board.length; i++) {
+        let array = board[i]
+
+        if (a.includes(indexColumn) === true && a.includes(indexRow) === true) {
+            for (let j = 0; j < 3; j++) {
+                for (let k = 0; k < 3; k++) {
+                    if (checkRow(board[0], num, j) === false && ) {
+                        return false
+                    }else if (checkRow(board[1], num, j) === false) {
+                        return false
+                    }else if (checkRow(board[2], num, j) === false) {
+                        return false
+                    } else if (checkColumn(board, num, i, k) === false) {
+                    return false
+                    }
+                }
+            }
+        } else if (a.includes(indexColumn) === true && b.includes(indexRow) === true) {
+            for (let j = 3; j < 6; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 0; k < 3; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (a.includes(indexColumn) === true && c.includes(indexRow) === true) {
+            for (let j = 6; j < 9; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 0; k < 3; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (b.includes(indexColumn) === true && a.includes(indexRow) === true) {
+            for (let j = 0; j < 3; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 3; k < 6; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (b.includes(indexColumn) === true && b.includes(indexRow) === true) {
+            for (let j = 3; j < 6; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 3; k < 6; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (b.includes(indexColumn) === true && c.includes(indexRow) === true) {
+            for (let j = 6; j < 9; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 3; k < 6; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (c.includes(indexColumn) === true && a.includes(indexRow) === true) {
+            for (let j = 0; j < 3; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 6; k < 9; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (c.includes(indexColumn) === true && b.includes(indexRow) === true) {
+            for (let j = 3; j < 6; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 6; k < 9; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        } else if (c.includes(indexColumn) === true && c.includes(indexRow) === true) {
+            for (let j = 6; j < 9; j++) {
+                if (checkRow(array, num, j) === false) {
+                    return false
+                }
+            }
+            for (let k = 6; k < 9; k++) {
+                if (checkColumn(board, num, i, k) === false) {
+                    return false
+                }
+            }
+        }
+        
+    }
+    return true
 
 }
 
-function checkBox(num){
+function sudokuChecker(board) {
     
-}
+    for (let m = 0; m < board.length; m++) {
+        let array = board[m]
+        let paraRow
+        let paraCol
+        let paraBox
 
-function sudokuChecker(array) {
+        for (let l = 0; l < array.length; l++) {
+            let num = array[l]
+
+            if (array[l].includes(".") === false) {
+                paraRow = checkRow(array, num, l)
+                paraCol = checkColumn(board, array, m, l)
+                paraBox = checkBox(board, array, m, l)
+                if (paraRow === false || paraCol === false || paraBox === false) {
+                    return false
+                }
+            }
+        }
+    }
+    return true
 
 }
 
