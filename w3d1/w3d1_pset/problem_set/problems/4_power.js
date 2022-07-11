@@ -17,6 +17,12 @@ power(11, 1); // => 11
 ***********************************************************************/
 
 function power(base, exp) {
+    let pow = 1
+    
+    for (let i = 1; i <= exp; i++) {
+        pow *= base
+    } 
+    return pow;
 
 }
 

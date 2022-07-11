@@ -21,7 +21,7 @@ objectSize(obj2); // => 3
 ***********************************************************************/
 
 function objectSize(obj) {
-
+  return Object.keys(obj).length
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
