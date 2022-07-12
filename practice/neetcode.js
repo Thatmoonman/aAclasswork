@@ -531,4 +531,94 @@ Input: board =
 ,[".",".",".",".","8",".",".","7","9"]]
 // console.log(sudokuChecker(board))
 // Output: false
-// Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+// Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8.
+// Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+
+//////////////////////////////////////////////////////////////////////////
+// Problem 13 - M
+
+// Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, 
+// find two numbers such that they add up to a specific target number. 
+// Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
+// Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.
+// The tests are generated such that there is exactly one solution. You may not use the same element twice.
+// Your solution must use only constant extra space.
+
+function targetPairs(array, target) {
+    
+    for (let i = 0; i < array.length - 1; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] + array[j] === target) {
+                return [i + 1, j + 1]
+            }
+        }
+    }
+}
+
+
+// Example 1:
+// numbers = [2,7,11,15], target = 9
+// console.log(targetPairs(numbers,target))
+// Output: [1,2]
+// Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+
+// Example 2:
+// numbers = [2,3,4], target = 6
+// console.log(targetPairs(numbers,target))
+// Output: [1,3]
+// Explanation: The sum of 2 and 4 is 6. Therefore index1 = 1, index2 = 3. We return [1, 3].
+
+// Example 3:
+// numbers = [-1,0], target = -1
+// console.log(targetPairs(numbers,target))
+// Output: [1,2]
+// Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
+
+///////////////////////////////////////////////////////////////
+//Problem 14 - M
+// Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k,
+// and nums[i] + nums[j] + nums[k] == 0.
+// Notice that the solution set must not contain duplicate triplets.
+ function triplets(array) {
+    let returnArray = []
+
+    for (let i = 0; i < array.length - 2; i++) {
+        for (let j = i + 1; j < array.length - 1; j++) {
+            for (let k = j + 1; k < array.length; k++) {
+                let num1 = array[i]
+                let num2 = array[j]
+                let num3 = array[k]
+                let subArray = [num1, num2, num3]
+                subArray = subArray.sort()
+
+                if (num1 + num2 + num3 === 0) {
+                    returnArray.push(subArray)
+                }
+            }
+        }
+    }
+    return returnArray
+
+ }
+ 
+
+// Example 1:
+nums = [-1,0,1,2,-1,-4]
+console.log(triplets(nums))
+// Output: [[-1,-1,2],[-1,0,1]]
+// Explanation: 
+// nums[0] + nums[1] + nums[1] = (-1) + 0 + 1 = 0.
+// nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+// nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+// The distinct triplets are [-1,0,1] and [-1,-1,2].
+// Notice that the order of the output and the order of the triplets does not matter.
+// Example 2:
+nums = [0,1,1]
+console.log(triplets(nums))
+// Output: []
+// Explanation: The only possible triplet does not sum up to 0.
+// Example 3:
+nums = [0,0,0]
+console.log(triplets(nums))
+// Output: [[0,0,0]]
+// Explanation: The only possible triplet sums up to 0.

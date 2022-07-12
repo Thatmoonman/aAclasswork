@@ -33,7 +33,10 @@ will print 5.
 ***********************************************************************/
 
 function myForEach(array, cb) {
-  return array.map(cb)
+  // return array.map(cb)
+  for (let i = 0; i < array.length; i++) {
+    cb(array[i], i, array)
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
