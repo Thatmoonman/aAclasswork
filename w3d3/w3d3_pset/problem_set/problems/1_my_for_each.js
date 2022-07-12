@@ -33,7 +33,7 @@ will print 5.
 ***********************************************************************/
 
 function myForEach(array, cb) {
-  
+  return array.map(cb)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

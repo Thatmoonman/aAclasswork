@@ -24,8 +24,16 @@ single paramter, but your `mySelect` function should still try to pass 3
 parameters to the callback. This allows us to create a versatile
 `mySelect` function that works with various callbacks.
 ***********************************************************************/
-
 function mySelect(arr, cb) {
+  let array = []
+  let truthy = arr.map(cb)
+
+  for (let i = 0; i < arr.length; i++) {
+    if (truthy[i] === true){
+      array.push(arr[i])
+    }
+  }
+  return array;
 
 }
 

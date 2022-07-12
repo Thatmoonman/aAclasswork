@@ -11,7 +11,15 @@ countAdjacentSums([6, 7, 11, 2, 5, 10, 3], 13) //=> 3
 ***********************************************************************/
 
 function countAdjacentSums(arr, n) {
+    let count = 0
 
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + arr[i + 1] === n) {
+            count++
+        }
+    }
+    return count;
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -17,7 +17,13 @@ powerSequence(8, 3); // => [ 8, 64, 512 ]
 ***********************************************************************/
 
 function powerSequence(base, length) {
+    let array = [base]
 
+    for (let i = 1; i < length; i++) {
+        array.push(array[i-1] * base)
+    }
+    return array;
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
