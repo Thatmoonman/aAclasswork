@@ -331,3 +331,42 @@ console.log(p2);
 //   [ 2, 2, 2, 2 ]
 // ]
 ////////////////////////////////////////////////////////
+function pascalsTriangle(n) {
+    let array = [[1],[1,1]]
+    
+    for (let i = 2; i < n; i++) {
+        let subArray = array[i-1]
+        let temp = []
+        
+        for (let j = 0; j <= subArray.length; j++) {
+            if (j === 0 || j === subArray.length) {
+                temp.push(1)
+            } else {
+                temp.push(subArray[j-1] + subArray[j])
+            }
+        }
+        array.push(temp)
+    }
+    return array;
+}
+
+
+console.log(pascalsTriangle(5));
+// [
+//     [1],
+//     [1, 1],
+//     [1, 2, 1],
+//     [1, 3, 3, 1],
+//     [1, 4, 6, 4, 1]
+// ]
+
+console.log(pascalsTriangle(7));
+// [
+//     [1],
+//     [1, 1],
+//     [1, 2, 1],
+//     [1, 3, 3, 1],
+//     [1, 4, 6, 4, 1],
+//     [1, 5, 10, 10, 5, 1],
+//     [1, 6, 15, 20, 15, 6, 1]
+// ]
