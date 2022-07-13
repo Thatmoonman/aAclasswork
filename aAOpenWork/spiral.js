@@ -4,29 +4,34 @@ function spiralOrder(matrix) {
 
     for (let i = array.length; i < size; i = array.length) {
     
-        for (let j = 0; j < matrix[0].length; j++) {
+        for (let j = 0; j < matrix[0].length; j++) { //strip top row right
             array.push(matrix[0][j])
         }
         matrix.shift(0)
         
-        if (array.length === size) {
-            return array
-        }
-        for (let k = 0; k < matrix.length - 1; k++) {
+            if (array.length === size) { //end of function catch
+                    return array;
+            }
+
+        for (let k = 0; k < matrix.length - 1; k++) { //strip right column down
             array.push(matrix[k][matrix[k].length - 1])
             matrix[k].pop(matrix[0].length - 1)
         }
-        if (array.length === size) {
-            return array
-        }
-        for (let m = matrix[matrix.length - 1].length - 1; m >= 0; m--) {
+
+            if (array.length === size) { //end of function catch
+                return array;
+            }
+
+        for (let m = matrix[matrix.length - 1].length - 1; m >= 0; m--) { //strip bottom row left
             array.push(matrix[matrix.length - 1][m])
         }
         matrix.pop(matrix.length - 1)
-        if (array.length === size) {
-            return array
-        }
-        for (let n = matrix.length - 1; n >= 0; n--) {
+        
+            if (array.length === size) { //end of function catch
+                return array;
+            }
+
+        for (let n = matrix.length - 1; n >= 0; n--) { //strip left column up
             array.push(matrix[n][0])
             matrix[n].shift(0)
         }
