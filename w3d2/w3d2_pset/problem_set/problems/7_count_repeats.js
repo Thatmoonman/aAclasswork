@@ -27,6 +27,6 @@ function countRepeats(string) {
     return repeats.length;
     
 }
-
+console.log(countRepeats("alvin"))
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countRepeats;

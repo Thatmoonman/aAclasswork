@@ -8,7 +8,7 @@ for (var i = 0; i < arr.length; i++) {
 // console.log(i)
 // bar ()
 // foo()
-test()
+// test()
 
 var foo = function () {
     console.log(" in foo")
@@ -22,3 +22,4 @@ function test() {
     console.log("in test")
 }
 
+///////  
