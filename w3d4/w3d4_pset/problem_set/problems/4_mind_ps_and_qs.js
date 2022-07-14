@@ -20,6 +20,23 @@ mindPsAndQs('PPPXQPPPQ'); // => 5
 
 
 function mindPsAndQs(str) {
+    test = 'PQ'
+    let streak = 0
+    let count = 0
+
+    for (let i = 0; i < str.length; i++){
+        
+        if (test.includes(str[i]) && count === 0) {
+            count = 1
+        } else if (test.includes(str[i]) && test.includes(str[i - 1])) {
+            count++
+        } else if (!test.includes(str[i]) && test.includes(str[i - 1]) && count > streak) {
+            streak = count
+            count = 0
+        }
+    }
+    if (count > streak) streak = count;
+    return streak;
 
 }
 

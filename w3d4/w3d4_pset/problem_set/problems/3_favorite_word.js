@@ -13,7 +13,29 @@ favoriteWord('x', 'sinful caesar sipped his snifter') //=> ''
 ***********************************************************************/
 
 function favoriteWord(favoriteLetter, sentence) {
+    let words = sentence.split(" ")
+    let favorites = {}
+    let favorite = ''
+    let fave = 0
 
+    for (let i = 0; i < words.length; i++) {
+        let count = 0
+        for (let j = 0; j < words[i].length; j++) {
+            if (words[i][j] === favoriteLetter) {
+                count++
+            }
+            favorites[words[i]] = count
+        }
+    }
+    
+    for (let key in favorites) {
+        if (favorites[key] > fave) {
+            fave = favorites[key]
+            favorite = key
+        }
+    }
+    return favorite;
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
