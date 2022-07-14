@@ -28,23 +28,18 @@ function duplicates(arrayNums) {
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
  function anagram(stringS,stringT) {
-    let count
-    let counted = {}
-    let sum = 0
+    let count = 0
+    let repeater = {}
+    
 
     if (stringS.length !== stringT.length) return false;
 
     for (let i = 0; i < stringS.length; i++) {
-        count = 0
-
-        for (let j = 0; j < stringT.length; j++) {
-            if (stringS[i] === stringT[j]) {
-                count++
-            }
+        for (let j = 0; j < stringS.length; j++) {
+            
         }
-        counted[stringS[i]] = count
     }
-    let total = Object.values(counted)
+    return count === 0
     
  }
 
