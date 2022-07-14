@@ -28,18 +28,31 @@ function duplicates(arrayNums) {
 // An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
  function anagram(stringS,stringT) {
-    let substringS = stringS.split("")
-    let substringT = stringT.split("")
+    let count
+    let counted = {}
+    let sum = 0
 
-    for (i=0; i<substringS.length; i++) {
-        return (substringS.includes(substringT[i]))
+    if (stringS.length !== stringT.length) return false;
+
+    for (let i = 0; i < stringS.length; i++) {
+        count = 0
+
+        for (let j = 0; j < stringT.length; j++) {
+            if (stringS[i] === stringT[j]) {
+                count++
+            }
+        }
+        counted[stringS[i]] = count
     }
+    let total = Object.values(counted)
+    
  }
 
 // Example 1:
-// console.log(anagram("anagram","nagaram")) //Output: true
+console.log(anagram("anagram","nagaram")) //Output: true
 // Example 2:
-// console.log(anagram("rat","car")) //Output: false
+console.log(anagram("rat","car")) //Output: false
+console.log(anagram("else","less")) // false
 
 //Problem 3 - E
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -604,7 +617,7 @@ function targetPairs(array, target) {
 
 // Example 1:
 nums = [-1,0,1,2,-1,-4]
-console.log(triplets(nums))
+// console.log(triplets(nums))
 // Output: [[-1,-1,2],[-1,0,1]]
 // Explanation: 
 // nums[0] + nums[1] + nums[1] = (-1) + 0 + 1 = 0.
@@ -614,11 +627,11 @@ console.log(triplets(nums))
 // Notice that the order of the output and the order of the triplets does not matter.
 // Example 2:
 nums = [0,1,1]
-console.log(triplets(nums))
+// console.log(triplets(nums))
 // Output: []
 // Explanation: The only possible triplet does not sum up to 0.
 // Example 3:
 nums = [0,0,0]
-console.log(triplets(nums))
+// console.log(triplets(nums))
 // Output: [[0,0,0]]
 // Explanation: The only possible triplet sums up to 0.
