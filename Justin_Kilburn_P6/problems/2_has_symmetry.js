@@ -16,8 +16,18 @@ hasSymmetry(['cat', 'dog', 'bird', 'bird', 'cat']) => false
 *******************************************************************************/
 
 function hasSymmetry(array) {
-  // your code here...
-}
+  let j = array.length - 1
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== array[j]) {
+      return false;
+    } else {
+      j--
+    }
+    
+  }
+  return true;
 
+}
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = hasSymmetry;

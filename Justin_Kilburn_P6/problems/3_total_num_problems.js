@@ -39,8 +39,15 @@ totalNumProblems(assessments) => 29
 *******************************************************************************/
 
 function totalNumProblems(assessments) {
-  // your code here...
-}
+  let total = 0
 
+  for (let key in assessments){
+    let probs = assessments[key]["problems"]
+    total += probs.length
+  }
+  return total;
+
+}
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = totalNumProblems;

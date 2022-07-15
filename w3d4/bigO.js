@@ -28,7 +28,7 @@ function quickSort(arr) {
 // logorithmic O(n)
 //linerithmic O(nlog(n))
 //liner O(n)
-// quadratic O(n^2)
+//quadratic O(2^n)
 //exponentional O(n^2)
 // factorial O(n!)
 
@@ -50,3 +50,4 @@ console.log(fibs(50))
 
 //DYNAMIC PROGRAMMING
 //memo-ization
+//linear O(n)
