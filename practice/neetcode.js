@@ -35,8 +35,28 @@ function duplicates(arrayNums) {
     if (stringS.length !== stringT.length) return false;
 
     for (let i = 0; i < stringS.length; i++) {
-        for (let j = 0; j < stringS.length; j++) {
-            
+        if (repeater[stringS[i]]) {
+            continue;
+        }
+        for (let j = 0; j < stringT.length; j++) {
+            if (stringS[i] === stringT[j]) {
+                if (repeater[stringS[i]] === undefined) {
+                    repeater[stringS[i]] = 1
+                    count++
+                } else {
+                    repeater[stringS[i]] += 1
+                    count++
+                }
+            }
+        }
+    }
+
+    for (let k = 0; k < stringS.length; k++) {
+        if (repeater[stringS[k]] > 0) {
+            count --
+            repeater[stringS[k]] -= 1
+        } else if (repeater[stringS[k]] === undefined) {
+            return false;
         }
     }
     return count === 0
@@ -45,9 +65,11 @@ function duplicates(arrayNums) {
 
 // Example 1:
 console.log(anagram("anagram","nagaram")) //Output: true
+console.log(anagram("amazeballs", "ballsamaze")) // true
 // Example 2:
 console.log(anagram("rat","car")) //Output: false
 console.log(anagram("else","less")) // false
+console.log(anagram("aaabbbccc","abbbbbbbc")) // false
 
 //Problem 3 - E
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -630,3 +652,41 @@ nums = [0,0,0]
 // console.log(triplets(nums))
 // Output: [[0,0,0]]
 // Explanation: The only possible triplet sums up to 0.
+
+//////////////////////////////////////////////////////////////////////
+//Problem 15 - M
+
+// You are given an integer array height of length n.
+// There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
+// Find two lines that together with the x-axis form a container, 
+// such that the container contains the most water.
+// Return the maximum amount of water a container can store.
+// Notice that you may not slant the container.
+
+function  mostWater(array) {
+    let volume = 0
+
+    for (let i = 0; i < array.length - 1; i++) {
+        let left = array[i]
+
+        for (let j = i + 1; j < array.length; j++) {
+            let right = array[j]
+
+            if (left > right && right * (j - i) > volume) {
+                volume = right * (j - i)
+            } else if (left * (j - i) > volume) {
+                volume = left * (j - i)
+            }
+        }
+    }
+    return volume
+}
+
+height = [1,8,6,2,5,4,8,3,7]
+console.log(mostWater(height))
+// Output: 49
+// Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. 
+// In this case, the max area of water (blue section) the container can contain is 49.
+height = [1,1]
+console.log(mostWater(height))
+// Output: 1
