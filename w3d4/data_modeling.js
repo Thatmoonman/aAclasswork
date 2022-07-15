@@ -307,7 +307,7 @@ function printNames(arr) {
   }
 }
 
-printNames(students1)
+// printNames(students1)
 
 // printNames(students1);
 
@@ -347,7 +347,7 @@ const students3 = [
 // Write a function that will print the name of the student and their highest test score
 // Example:
 //
-printBestGrade(students3)
+// printBestGrade(students3)
 // Anthony 84
 // Winnie 100
 // Pikachu 92
@@ -372,3 +372,4 @@ function printBestGrade(arr) {
     console.log (arr[j]["name"] + " : " + highestScore(arr[j]["grades"]))
   }
 }
+
