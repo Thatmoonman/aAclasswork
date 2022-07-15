@@ -21,7 +21,8 @@ function hasAllVowels(str) {
         }
     }
     return true;
-    
+}
+// O(n)
     // let check = ''
     // let sentence = str.split(" ")
 
@@ -43,7 +44,7 @@ function hasAllVowels(str) {
     // } else {
     //     return false;
     // }
-}
-
+// }
+//
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = hasAllVowels;

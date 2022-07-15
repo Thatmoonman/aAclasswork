@@ -37,6 +37,6 @@ function favoriteWord(favoriteLetter, sentence) {
     return favorite;
     
 }
-
+// O(2n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = favoriteWord;

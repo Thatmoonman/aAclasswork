@@ -39,6 +39,6 @@ function mindPsAndQs(str) {
     return streak;
 
 }
-
+//O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = mindPsAndQs;

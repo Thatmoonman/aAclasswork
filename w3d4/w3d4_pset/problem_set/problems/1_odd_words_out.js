@@ -21,6 +21,6 @@ function oddWordsOut(sentence) {
     return newSent.join(" ")
 
 }
-
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = oddWordsOut;

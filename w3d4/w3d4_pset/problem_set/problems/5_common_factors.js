@@ -22,6 +22,6 @@ function commonFactors(num1, num2) {
     return array;
 
 }
-
+//O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = commonFactors;

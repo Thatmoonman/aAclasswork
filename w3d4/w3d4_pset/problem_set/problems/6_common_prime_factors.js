@@ -34,6 +34,6 @@ function commonPrimeFactors(num1, num2) {
     }
     return arr.filter(num => isPrime(num))
 }
-
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = commonPrimeFactors;
