@@ -18,23 +18,27 @@ var array2 = [12, 9, 20, 13, 14];
 minValueCallback(array2, double); // => 18
 *******************************************************************************/
 function minValueCallback(array, cb) {
-  let min
+  // let min
 
-  if (array.length === 0) {
-    min = null
-  } else {
-    min = array[0]
-  }
+  // if (array.length === 0) {
+  //   min = null
+  // } else {
+  //   min = array[0]
+  // }
 
-  for (let i = 0; i < array.length; i++) {
-    if (min > array[i]) {
-      min = array[i]
-    }
-  }
-  return cb(min);
+  // for (let i = 1; i < array.length; i++) {
+  //   if (min > array[i]) {
+  //     min = array[i]
+  //   }
+  // }
+  // return cb(min);
+
+  // console.log(array.sort((a, b) => a - b))
+  console.log(array.sort())
+  return array.length === 0 ? cb(null) : cb(array.sort((a, b) => a - b)[0])
 
 }
-
+//when we sort the time complexity is O(nlog(n))
 // O(n)
 
 

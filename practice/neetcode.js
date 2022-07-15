@@ -64,12 +64,12 @@ function duplicates(arrayNums) {
  }
 
 // Example 1:
-console.log(anagram("anagram","nagaram")) //Output: true
-console.log(anagram("amazeballs", "ballsamaze")) // true
+// console.log(anagram("anagram","nagaram")) //Output: true
+// console.log(anagram("amazeballs", "ballsamaze")) // true
 // Example 2:
-console.log(anagram("rat","car")) //Output: false
-console.log(anagram("else","less")) // false
-console.log(anagram("aaabbbccc","abbbbbbbc")) // false
+// console.log(anagram("rat","car")) //Output: false
+// console.log(anagram("else","less")) // false
+// console.log(anagram("aaabbbccc","abbbbbbbc")) // false
 
 //Problem 3 - E
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -683,10 +683,13 @@ function  mostWater(array) {
 }
 
 height = [1,8,6,2,5,4,8,3,7]
-console.log(mostWater(height))
+// console.log(mostWater(height))
 // Output: 49
 // Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. 
 // In this case, the max area of water (blue section) the container can contain is 49.
 height = [1,1]
-console.log(mostWater(height))
+// console.log(mostWater(height))
 // Output: 1
+
+let vowels = 'aeiou'.split("")
+// console.log(vowels)

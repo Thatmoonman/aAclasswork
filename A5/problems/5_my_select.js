@@ -22,13 +22,13 @@ result2; // => [ 2, 4, 8 ]
 *******************************************************************************/
 
 function mySelect(arr, cb) {
-  let array = []
+  let array = arr.filter(ele => cb(ele))
 
-  for (let i = 0; i < arr.length; i++) {
-    if (cb(arr[i], i, arr)) {
-      array.push(arr[i])
-    }
-  }
+  // for (let i = 0; i < arr.length; i++) {
+  //   if (cb(arr[i], i, arr)) {
+  //     array.push(arr[i])
+  //   }
+  // }
   return array;
 
 }

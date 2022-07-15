@@ -31,6 +31,6 @@ function sum2DArray(array) {
   return sum;
 
 }
-// O(n^2)?
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = sum2DArray;
