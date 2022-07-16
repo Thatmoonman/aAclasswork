@@ -691,5 +691,46 @@ height = [1,1]
 // console.log(mostWater(height))
 // Output: 1
 
+////////////////////////////////////////////////
 let vowels = 'aeiou'.split("")
 // console.log(vowels)
+//////////////////////////////////////////////////
+
+// Given n non-negative integers representing an elevation map where the width of each bar is 1, 
+// compute how much water it can trap after raining.
+
+ function rainWater(array) {
+    let volume = 0
+
+    for (let i = 0; i < array.length - 2; i++) {
+        let left = array[i]
+        if (left > array[i + 1]) {
+            let mid = array[i + 1]
+
+            for (let j = i + 2; j < array.length; j++) {
+                let right = array[j]
+                
+                if (right >= left) {
+                    volume += ((left * (j - (i + 1)) - mid))
+                    i = j - 1
+                    break;
+                } else {
+                    mid += right
+                }
+            }
+        } 
+    }
+    return volume;
+
+ }
+
+// Example 1:
+height = [0,1,0,2,1,0,1,3,2,1,2,1]
+console.log(rainWater(height))
+// Output: 6
+// Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. 
+// In this case, 6 units of rain water (blue section) are being trapped.
+// Example 2:
+height = [4,2,0,3,2,5]
+console.log(rainWater(height))
+// Output: 9
