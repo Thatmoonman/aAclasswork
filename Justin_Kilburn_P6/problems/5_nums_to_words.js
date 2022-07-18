@@ -25,6 +25,6 @@ function numsToWords(numString) {
   return newString;
 
 }
-// O(n)?
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = numsToWords;

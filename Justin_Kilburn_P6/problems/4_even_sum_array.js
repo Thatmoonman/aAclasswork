@@ -24,6 +24,6 @@ function evenSumArray(array) {
   return array.map(num => evenSum(num))
 }
 
-//O(n) ? quadratic?
+//O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = evenSumArray;
