@@ -633,7 +633,7 @@ function targetPairs(array, target) {
  
 
 // Example 1:
-nums = [-1,0,1,2,-1,-4]
+// nums = [-1,0,1,2,-1,-4]
 // console.log(triplets(nums))
 // Output: [[-1,-1,2],[-1,0,1]]
 // Explanation: 
@@ -643,12 +643,12 @@ nums = [-1,0,1,2,-1,-4]
 // The distinct triplets are [-1,0,1] and [-1,-1,2].
 // Notice that the order of the output and the order of the triplets does not matter.
 // Example 2:
-nums = [0,1,1]
+// nums = [0,1,1]
 // console.log(triplets(nums))
 // Output: []
 // Explanation: The only possible triplet does not sum up to 0.
 // Example 3:
-nums = [0,0,0]
+// nums = [0,0,0]
 // console.log(triplets(nums))
 // Output: [[0,0,0]]
 // Explanation: The only possible triplet sums up to 0.
@@ -696,6 +696,7 @@ let vowels = 'aeiou'.split("")
 // console.log(vowels)
 //////////////////////////////////////////////////
 
+//Problem 16 - H
 // Given n non-negative integers representing an elevation map where the width of each bar is 1, 
 // compute how much water it can trap after raining.
 
@@ -725,12 +726,79 @@ let vowels = 'aeiou'.split("")
  }
 
 // Example 1:
-height = [0,1,0,2,1,0,1,3,2,1,2,1]
-console.log(rainWater(height))
+// height = [0,1,0,2,1,0,1,3,2,1,2,1]
+// console.log(rainWater(height))
 // Output: 6
 // Explanation: The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. 
 // In this case, 6 units of rain water (blue section) are being trapped.
 // Example 2:
-height = [4,2,0,3,2,5]
-console.log(rainWater(height))
+// height = [4,2,0,3,2,5]
+// console.log(rainWater(height))
 // Output: 9
+
+// Problem 17
+// Given an integer array nums, find the contiguous subarray (containing at least one number) 
+// which has the largest sum and return its sum.
+// A subarray is a contiguous part of an array.
+
+function contiguousSub(array) {
+    let sum = 0
+    if (array.length < 2) {
+        return array[0]
+    }
+
+    for (let i = 0; i < array.length - 1; i++) {
+        let temp = array[i]
+
+        for (let j = i + 1; j< array.length; j++) {
+            temp += array[j]
+
+            if (temp > sum) {
+                sum = temp
+            }
+        }
+    }
+    return sum;
+
+}
+
+// Example 1:
+// nums = [-2,1,-3,4,-1,2,1,-5,4]
+// console.log(contiguousSub(nums))
+// Output: 6
+// Explanation: [4,-1,2,1] has the largest sum = 6.
+// Example 2:
+// nums = [1]
+// console.log(contiguousSub(nums))
+// Output: 1
+// Example 3:
+// nums = [5,4,-1,7,8]
+// console.log(contiguousSub(nums))
+// Output: 23
+
+//Problem 18 - M
+// You are given an integer array nums. You are initially positioned at the array's first index,
+// and each element in the array represents your maximum jump length at that position.
+// Return true if you can reach the last index, or false otherwise.
+
+function jumpLength(array) {
+
+    for (let i = 0; i < array.length - 1; i += array[i]){
+        if (array[i] === 0 || i >= array.length) {
+            return false
+        }
+    }
+    return true;
+
+}
+ 
+// Example 1:
+nums = [2,3,1,1,4]
+console.log(jumpLength(nums))
+// Output: true
+// Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+// Example 2:
+nums = [3,2,1,0,4]
+console.log(jumpLength(nums))
+// Output: false
+// Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
