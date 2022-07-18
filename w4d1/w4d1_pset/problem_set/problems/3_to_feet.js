@@ -14,6 +14,18 @@ toFeet(arr2); // => [ '6 feet', '3 feet', '30 feet' ]
 ***********************************************************************/
 
 function toFeet(distances) {
+    let allFeet = []
+
+    for (let i = 0; i < distances.length; i++){
+        let noYards = distances[i].split(" ")
+
+        if (noYards.includes("yards")) {
+            allFeet.push(noYards[0]*3 + " feet")
+        } else {
+            allFeet.push(noYards.join(" "))
+        }
+    }
+    return allFeet;
 
 }
 

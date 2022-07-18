@@ -13,6 +13,32 @@ canConstruct("aabbc", "aaaabbbdef");  // => false
 ***********************************************************************/
 
 function canConstruct(ransomNote, magazine) {
+    let obj = {}
+    let check = 0
+
+    for (let i  = 0; i < ransomNote.length; i++) {
+        let letter = ransomNote[i]
+
+        if (obj[letter] === undefined) {
+            obj[letter] = 1
+            check++
+        } else {
+            obj[letter] += 1
+            check++
+        }
+    }
+
+    for (let j = 0; j < magazine.length; j++) {
+        let letterCheck = magazine[j]
+
+        for (let key in obj) {
+            if (letterCheck === key && obj[key] > 0) {
+                obj[key] -= 1
+                check--
+            }
+        }
+    }
+    return check === 0;
 
 }
 

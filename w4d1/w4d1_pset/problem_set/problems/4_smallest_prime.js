@@ -20,8 +20,28 @@ smallestPrime(arr3); // => null
 var arr4 = [4, 6, 8, 10];
 smallestPrime(arr4); // => null
 ***********************************************************************/
+function isPrime(num) {
+    if (num < 2) return false;
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
 
 function smallestPrime(array) {
+    let smallest = null
+
+    for (let i = 0; i < array.length; i++) {
+        if (isPrime(array[i]) && smallest === null) {
+            smallest = array[i]
+        } else if (isPrime(array[i]) && array[i] < smallest) {
+            smallest = array[i]
+        }
+    }
+    return smallest;
 
 }
 
