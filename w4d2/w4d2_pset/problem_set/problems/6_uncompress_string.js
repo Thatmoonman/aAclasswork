@@ -16,7 +16,15 @@ uncompressString('x3y1x2z4'); // => 'xxxyxxzzzz'
 ***********************************************************************/
 
 function uncompressString(str) {
+    let newStr = ''
 
+    for (let i =0; i < str.length; i += 2) {
+        for (let j = 0; j < str[i + 1]; j++) {
+            newStr += str[i]
+        }
+    }
+    return newStr;
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

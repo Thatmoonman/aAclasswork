@@ -12,6 +12,13 @@ safeSpeedChange([8, 10, 4, 3, 2]); // => false
 
 function safeSpeedChange(speeds) {
 
+    for (let i = 0; i < speeds.length - 1; i++) {
+        if (Math.abs(speeds[i] - speeds[i + 1]) > 5) {
+            return false;
+        }
+    }
+    return true;
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
