@@ -19,20 +19,30 @@ stopWatch(86400); // => '24:00:00'
 stopWatch(86522); // => '24:02:02'
 stopWatch(99999); // => '27:46:39'
 ***********************************************************************/
-function padNum(num){
-    if (num.length === 2) return num.toString();
+function padNum(array){
+    let newArray = []
     
-    return padNum(num.unshift(0));
-    
+    for (let i = 0; i < array.length; i++) {
+        let str = ''
+
+        if (array[i] < 10) {
+            str = '0' + array[i].toString()
+        } else {
+            str = array[i]
+        }
+        newArray.push(str)
+        
+    }
+    return newArray.join(":")
 }
 
 function stopWatch(totalSeconds) {
-    let sec = [totalSeconds % 60]
-    let min = [((totalSeconds - sec)/60) % 60]
-    let ho = [(((totalSeconds - sec)/60) - min)/60]
+    let sec = totalSeconds % 60
+    let min = ((totalSeconds - sec)/60) % 60
+    let ho = (((totalSeconds - sec)/60) - min)/60
 
-    let time = padNum(sec) + ":" + padNum(min) + ":" + padNum(ho)
-    return time;
+    let time = [ho, min, sec]
+    return padNum(time);
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
