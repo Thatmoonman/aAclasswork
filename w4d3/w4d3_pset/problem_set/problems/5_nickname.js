@@ -12,7 +12,7 @@ nickname('bob'); // => 'BOB-BOB'
 ***********************************************************************/
 
 function nickname(name) {
-
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
