@@ -22,25 +22,23 @@ function isPrime(num) {
   
 }
 
-function allPrimes(n) {
-  if (n < 2) {
-    let array =[]
-    return array
-  }
-
-  if (isPrime(n)) {
-    array.push(n)
-    return allPrimes(n - 1)
-  }
-  return allPrimes(n - 1)
+allPrimes = (n, array = []) => {
+    if (n === 1) {
+      return array;
+    } else if (isPrime(n)) {
+      array.push(n)
+      return allPrimes(n - 1, array);
+    } else {
+      return allPrimes(n - 1, array);
+    }
 }
 
 function primeFactors(number) {
-  let primeArray = allPrimes(number)
-  let factors = []
+  let primeArray = allPrimes(number).sort()
 
+  let factors = primeArray.filter(ele => number % ele === 0)
 
-  return factors
+  return factors;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
