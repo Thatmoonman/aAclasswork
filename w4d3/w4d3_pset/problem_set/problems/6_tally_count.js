@@ -13,7 +13,16 @@ tallyCount(arr2); // => { x: 'III', y: 'II', z: 'I' }
 ***********************************************************************/
 
 function tallyCount(arr) {
+    let tallyCount = {}
 
+    for (let i = 0; i < arr.length; i++) {
+        if (tallyCount[arr[i]] === undefined) {
+            tallyCount[arr[i]] = 'I'
+        } else {
+            tallyCount[arr[i]] += 'I'
+        }
+    }
+    return tallyCount;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
