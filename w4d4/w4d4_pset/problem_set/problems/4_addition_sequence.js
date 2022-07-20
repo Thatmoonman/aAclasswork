@@ -27,7 +27,7 @@ additionSequence(arr2, seq2); // => [ 2, 4, 4, 6, 6, 8, 8 ]
 ***********************************************************************/
 
 function additionSequence(array, sequence) {
-
+    
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
