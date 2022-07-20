@@ -15,7 +15,9 @@ multiply(0, 100); // => 0
 ***********************************************************************/
 
 function multiply(a, b) {
+    if (a === 0) return 0;
 
+    return b + multiply (a-1, b)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

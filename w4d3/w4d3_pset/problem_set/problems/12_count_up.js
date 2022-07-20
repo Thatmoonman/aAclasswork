@@ -23,7 +23,10 @@ done!
 ***********************************************************************/
 
 function countUp(num) {
+ if (num >= 10) return console.log("done!")
 
+ console.log(num)
+ return countUp(num + 1)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
