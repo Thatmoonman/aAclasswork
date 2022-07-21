@@ -47,7 +47,7 @@ function flatten(data) {
     let newArr = []
     for (let i = 0; i < data.length; i++) {
         if (Array.isArray(data[i])) {
-            newArr = newArr.concat(flatten(data[i]))
+            newArr = newArr.concat(flatten(data[i])) //CONCAT RETURNS NEW ARRAY! DOES NOT MUTATE
         } else {
             newArr.push(data[i])
         }

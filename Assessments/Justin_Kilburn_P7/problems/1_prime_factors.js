@@ -23,9 +23,9 @@ function isPrime(num) {
 }
 
 allPrimes = (n, array = []) => {
-    if (n === 1) {
-      return array;
-    } else if (isPrime(n)) {
+    if (n === 1) return array;
+    
+    if (isPrime(n)) {
       array.push(n)
       return allPrimes(n - 1, array);
     } else {
