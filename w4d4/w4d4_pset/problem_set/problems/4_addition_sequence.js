@@ -27,6 +27,14 @@ additionSequence(arr2, seq2); // => [ 2, 4, 4, 6, 6, 8, 8 ]
 ***********************************************************************/
 
 function additionSequence(array, sequence) {
+    let newArray = []
+
+    for (let i = 0; i < array.length; i++) {
+        let loop = i % sequence.length
+
+        newArray.push(array[i] + sequence[loop])
+    }
+    return newArray;
     
 }
 

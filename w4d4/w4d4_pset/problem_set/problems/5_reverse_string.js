@@ -11,7 +11,10 @@ reverseString(''); // => ''
 ***********************************************************************/
 
 function reverseString(string) {
+    if (string.length === 0) return string;
 
+    let letter = string[0]
+    return reverseString(string.slice(1,)).concat(letter)
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -34,7 +34,25 @@ in your brain. (programmer.mind === 'blown')
 ***********************************************************************/
 
 function flatten(data) {
+    // if (!Array.isArray(data)) return [data];
+    
+    // let array = []
 
+    // for (let i = 0; i < data.length; i++) {
+    //     array = array.concat(flatten(data[i]))
+    // }
+    // return array
+    if (!Array.isArray(data)) return [data]
+
+    let newArr = []
+    for (let i = 0; i < data.length; i++) {
+        if (Array.isArray(data[i])) {
+            newArr = newArr.concat(flatten(data[i]))
+        } else {
+            newArr.push(data[i])
+        }
+    }
+    return newArr
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
