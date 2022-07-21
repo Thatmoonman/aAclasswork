@@ -27,6 +27,16 @@ Hint:
 
 
 function greatestMap(array, cb1, cb2) {
+  let newArray = []
+
+  for (let i = 0; i < array.length; i++) {
+    if (cb1(array[i], i, array) > cb2(array[i], i, array)) {
+      newArray.push(cb1(array[i], i, array))
+    } else {
+      newArray.push(cb2(array[i], i, array))
+    }
+  }
+  return newArray;
 
 }
 

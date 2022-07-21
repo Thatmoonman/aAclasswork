@@ -13,7 +13,20 @@ secondLargest([]) => -1;
 ***********************************************************************/
 
 function secondLargest(array) {
+    let largest = 0
+    let second = -1
 
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > largest) {
+            largest = array[i]
+        }
+    }
+    for (let j = 0; j < array.length; j++) {
+        if (array[j] > second && largest > array[j]) {
+            second = array[j]
+        }
+    }
+    return second;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
