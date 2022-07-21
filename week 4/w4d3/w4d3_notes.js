@@ -36,19 +36,29 @@ function factorial(n) { //3
 //   console.log(factorial(0));
 //   console.log(factorial(3));
 
-function power(base, exp) { //power()
-    if(exp === 0) {
-      return 1;
-    }
+// function power(base, exp) { //power()
+//     if(exp === 0) {
+//       return 1;
+//     }
     
-    if (exp > 0) {
-    let prev = 1 / base * power(base, exp - 1) ;
-    return prev                                   
-    } else if (exp < 0) {
-    let prev = 1 / base * power(base, exp + 1)
-    return 1/prev
+//     if (exp > 0) {
+//     let prev = 1 / base * power(base, exp - 1) ;
+//     return prev                                   
+//     } else if (exp < 0) {
+//     let prev = 1 / base * power(base, exp + 1)
+//     return 1/prev
+//     }
+//   }
+
+  function power(base, exp) {
+    if (exp < 0) {
+        return 1 /( base * power(base,Math.abs(exp) - 1))
+    } else if (exp > 0) {
+          return base * power(base,exp - 1)
+    } else {
+        return 1
     }
-  }
+}
   // console.log(power(2, -2));
   // console.log(power(2, 3)); 
   // console.log(power(2, 0));
