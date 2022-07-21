@@ -31,6 +31,6 @@ function numberPrimes(n) {
   }
   return count
 }
-
+//O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = numberPrimes;

@@ -41,6 +41,6 @@ function previousPrimeArray(array) {
   }
   return newArray;
 }
-
+// O(log(n))
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = previousPrimeArray;

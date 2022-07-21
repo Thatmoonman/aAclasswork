@@ -27,6 +27,6 @@ function longestBigram(sentence) {
   return words[index] + " " + words[index + 1]
 
 }
-
+//O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = longestBigram;

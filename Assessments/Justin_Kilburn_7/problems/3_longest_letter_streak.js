@@ -42,6 +42,6 @@ function longestLetterStreak(str, searchLetters) {
   return longest;
 
 }
-
+// O(n)
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = longestLetterStreak;
