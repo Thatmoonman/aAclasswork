@@ -15,11 +15,12 @@ breakDownObj(object2); // => [ 'location', 'borough', 'NY', 'Brooklyn' ]
 ***********************************************************************/
 
 function breakDownObj(obj) {
-  let keys = Object.keys(obj)
-  let vals = Object.values(obj)
+  // let keys = Object.keys(obj)
+  // let values = Object.values(obj)
   
-  return array = [...keys, ...vals]
-  // return keys.concat(vals)
+  // let array = [...keys,...values]
+  // return array;
+  return [...Object.keys(obj),...Object.values(obj)]
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

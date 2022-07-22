@@ -29,16 +29,17 @@ appleCounter(obj3); // => 3
 ***********************************************************************/
 
 function appleCounter(appleObj) {
-  let keys = Object.keys(appleObj)
+  let keyList = Object.keys(appleObj)
   let count = 0
 
-  for (let i = 0; i < keys.length; i++) {
-    let test = keys[i].toLowerCase()
-    if (test.includes("apple")) {
+  for (let i = 0; i < keyList.length; i++) {
+    let key = keyList[i]
+    if (key.toLowerCase().includes("apple")) {
       count++
     }
   }
   return count;
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
