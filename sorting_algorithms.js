@@ -35,7 +35,7 @@ function binarySearch(arr, target) {
 
     let mid = Math.floor(arr.length / 2);
     let left = arr.slice(0, mid);
-    let right = arr.slice(mid + 1);
+    let right = arr.slice(mid + 1,);
 
     if (arr[mid] === target) {
         return mid
@@ -54,7 +54,7 @@ function mergeSort(arr) {
     let mid = Math.floor(arr.length / 2);
     let left = mergeSort(arr.slice(0,mid));
     let right = mergeSort(arr.slice(mid));
-    return mergeSort(left, right);
+    return merge(left, right);
 }
 
 function merge(left, right) {
