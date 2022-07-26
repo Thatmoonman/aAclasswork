@@ -22,7 +22,10 @@ console.log(test); // ['LAIKA', 'BELKA']
 *******************************************************************************/
 
 let myForEach = function() {
-    console.lof(array, i, cb(array))
+    for (let i = 0; i < array.length; i++)
+    console.log(cb(array[i]))
 };
 
 
+/*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
+module.exports = myForEach;

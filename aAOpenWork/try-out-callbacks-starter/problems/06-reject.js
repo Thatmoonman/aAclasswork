@@ -22,7 +22,13 @@ console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth'
 *******************************************************************************/
 
 let reject = function() {
-
+    let newArray = []
+    for (let i = 0; i < array.length; i++) {
+        if(!cb(array[i])) {
+            newArray.push(array[i])
+        }
+    }
+    return newArray;
 };
 
 

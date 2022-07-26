@@ -24,7 +24,12 @@ console.log(result3);   // true
 *******************************************************************************/
 
 let mySome = function() {
-
+    for  (let i = 0; i < array.length; i++) {
+        if (cb(array[i])) {
+            return true;
+        }
+    }
+    return false;
 };
 
 

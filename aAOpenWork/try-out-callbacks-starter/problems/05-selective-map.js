@@ -43,7 +43,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 *******************************************************************************/
 
 let selectiveMap = function() {
-
+    let newArray = []
+    
+    for (let i = 0; i < array.length; i++) {
+        if (cb1(array[i])) {
+            newArray.push(cb2(array[i]))
+        } else {
+            newArray.push(array[i])
+        }
+    }
+    return newArray;
 };
 
 
