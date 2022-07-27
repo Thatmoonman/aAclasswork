@@ -24,11 +24,14 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 // your code here
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+// Example 1:
+let firstAdd = lazyAdder(1);
+let secondAdd = firstAdd(2);
+let sum = secondAdd(3);
+console.log(sum); // prints 6
 
-try {
-  module.exports = lazyAdder;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+// Example 2:
+let func1 = lazyAdder(10);
+let func2 = func1(20);
+let total = func2(3);
+console.log(total); // prints 33

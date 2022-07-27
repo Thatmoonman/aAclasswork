@@ -23,14 +23,22 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
-
-// your code here
-
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-
-try {
-  module.exports = recVolume;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
+let recVolume = (num) => {
+  let volume = [] 
+  if (volume.length < 3) {
+    volume.push(num)
+  }
+  return volume
 }
+// your code here
+// Example 1:
+let table1 = recVolume(5); // returns a function
+table1(4); // returns a function
+console.log(table1(3)); // prints 60
+console.log(table1(145)); // STILL prints 60
+
+// Example 2:
+let table2 = recVolume(3); // returns a function
+table2(2); // returns a function
+console.log(table2(1)); // prints 6
+console.log(table2(75)); // STILL prints 6
