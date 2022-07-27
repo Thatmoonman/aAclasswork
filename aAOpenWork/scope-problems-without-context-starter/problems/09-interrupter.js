@@ -15,14 +15,13 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 
 ***********************************************************************/
-
+let interrupter = (interruptingWord) => "test"
 // your code here!
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+let rudePerson = interrupter("what"); // => returns a function
+console.log(rudePerson("how are you")); // prints "how what are what you"
+console.log(rudePerson("I like pie")); // prints "I what like what pie"
 
-try {
-  module.exports = interrupter;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+let rudePerson2 = interrupter("yo"); // => returns a function
+console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"

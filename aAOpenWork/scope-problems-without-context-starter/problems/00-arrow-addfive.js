@@ -14,12 +14,13 @@ let result3 = addFive(37); // returns 42
 
 
 ***********************************************************************/
-
+let addFive = (n) => n + 5
 // your code here!
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = addFive;
-} catch (e) {
-  return null;
-}
+let result1 = addFive(0); // returns 5
+let result2 = addFive(10); // returns 15
+let result3 = addFive(37); // returns 42
+
+console.log(result1)
+console.log(result2)
+console.log(result3)

@@ -17,16 +17,13 @@ funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"
 
 
 ***********************************************************************/
-
+let funcTimer = (time, cb) => {
+  global.setTimeout(cb, time)
+}
 // your code here!
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-
-try {
-  module.exports = funcTimer;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
+function partyFunc () {
+  console.log("Party time!")
 }
 
-
+funcTimer(5000, partyFunc); // in 5 seconds prints: "Party time!"

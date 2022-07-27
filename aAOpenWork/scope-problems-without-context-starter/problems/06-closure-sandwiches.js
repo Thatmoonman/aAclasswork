@@ -16,14 +16,20 @@ let sandwich2 = sandwichMaker(); // => returns a function
 sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
+let sandwichMaker = (str) => {
+  let ingredients = ["tomato"]
+  ingredients.push(str)
+  let sentence = "One sandwich with "
 
+  return sentence + ingredients.join(" and ");
+}
 // your code here!
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+let sandwich = sandwichMaker(); // => returns a function
+console.log(sandwich("spinach")); // => "One sandwich with tomato and spinach"
+console.log(sandwich("jelly")); // => "One sandwich with tomato and spinach and jelly"
+console.log(sandwich("bread")); // => "One sandwich with tomato and spinach and jelly and bread"
 
-try {
-  module.exports = sandwichMaker;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+// Another Sandwich:
+let sandwich2 = sandwichMaker(); // => returns a function
+console.log(sandwich2("pb")); // => "One sandwich with tomato and pb"

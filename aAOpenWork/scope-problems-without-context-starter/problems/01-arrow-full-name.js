@@ -13,13 +13,10 @@ let p2 = {firstName: 'Charlie', lastName: 'Brown', age: 9};
 arrowGetFullName(p2); // => 'Charlie Brown'
 
 ***********************************************************************/
-
+const arrowGetFullName = (person) => person.firstName + " " + person.lastName;
 // your code here!
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-
-try {
-  module.exports = arrowGetFullName;
-} catch (e) {
-  return null;
-}
+let p1 = {firstName: 'John', lastName: 'Doe'};
+console.log(arrowGetFullName(p1)); // => 'John Doe'
+let p2 = {firstName: 'Charlie', lastName: 'Brown', age: 9};
+console.log(arrowGetFullName(p2)); // => 'Charlie Brown'
