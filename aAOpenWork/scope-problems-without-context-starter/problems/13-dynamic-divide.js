@@ -17,14 +17,16 @@ divideByFive(50); // returns 10
 
 
 ***********************************************************************/
-
+let dynamicDivide = (divisor) => {
+  return 
+}
 // your code here
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+let halfer = dynamicDivide(2); // returns a function
+halfer(20); // returns 10
 
-try {
-  module.exports = dynamicDivide;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+let divideByThree = dynamicDivide(3);
+divideByThree(30); // returns 10
+
+let  divideByFive = dynamicDivide(5);
+divideByFive(50); // returns 10
