@@ -18,15 +18,17 @@ divideByFive(50); // returns 10
 
 ***********************************************************************/
 let dynamicDivide = (divisor) => {
-  return 
+  return function(num) {
+    return num / divisor
+  } 
 }
 // your code here
 
 let halfer = dynamicDivide(2); // returns a function
-halfer(20); // returns 10
+console.log(halfer(20)); // returns 10
 
 let divideByThree = dynamicDivide(3);
-divideByThree(30); // returns 10
+console.log(divideByThree(30)); // returns 10
 
 let  divideByFive = dynamicDivide(5);
-divideByFive(50); // returns 10
+console.log(divideByFive(50)); // returns 10

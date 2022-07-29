@@ -21,7 +21,13 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Explain, but don't code, how you would turn your solution into a one-line
   fat-arrow function
 ***********************************************************************/
-
+function lazyAdder(firstNum) {
+  return firstNum + function(secondNum) {
+    return secondNum + function(thirdNum) {
+      return thirdNum;
+    }
+  }
+}
 // your code here
 
 // Example 1:

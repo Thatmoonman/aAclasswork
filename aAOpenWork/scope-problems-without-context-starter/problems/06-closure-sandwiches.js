@@ -16,12 +16,14 @@ let sandwich2 = sandwichMaker(); // => returns a function
 sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
-let sandwichMaker = (str) => {
+let sandwichMaker = () => {
   let ingredients = ["tomato"]
-  ingredients.push(str)
   let sentence = "One sandwich with "
-
-  return sentence + ingredients.join(" and ");
+  
+  return function(str) {
+    ingredients.push(str)
+    return sentence + ingredients.join(" and ")
+  }
 }
 // your code here!
 

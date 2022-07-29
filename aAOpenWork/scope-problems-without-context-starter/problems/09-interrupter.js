@@ -15,10 +15,15 @@ console.log(rudePerson2("I love dogs")); // prints "I yo love yo dogs"
 
 
 ***********************************************************************/
-let interrupter = (interruptingWord) => "test"
-// your code here!
+let interrupter = (interruptingWord) => {
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+    return function(str) {
+        return str.split(" ").join(" " + interruptingWord + " ")
+    }
+}
+
+
+
 let rudePerson = interrupter("what"); // => returns a function
 console.log(rudePerson("how are you")); // prints "how what are what you"
 console.log(rudePerson("I like pie")); // prints "I what like what pie"
