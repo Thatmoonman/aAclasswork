@@ -25,30 +25,35 @@ arguments and returning itself until it has enough arguments, at which point it
 actually does the required work of summing.
 
 
-Example:
+
+***********************************************************************/
+function curriedSum(numArgs) {
+  let numbers = []
+
+  return function(num) {
+    numbers.push(num)
+    if (numbers.length === numArgs) {
+      return numbers.reduce((acc, ele) => acc += ele)
+    } else {
+      return `_curriedSum`
+    }
+  }
+}
+// your code here
+
+// Example:
 // 1
-const sum = curriedSum(4); // returns a function
-sum(5) // returns a function
-sum(20) // returns a function
-sum(30) // returns a function
-sum(20); // => returns 75
+let sum1 = curriedSum(4); // returns a function
+console.log(sum1(5)) // returns a function
+console.log(sum1(20)) // returns a function
+console.log(sum1(30)) // returns a function
+console.log(sum1(20)); // => returns 75
 
 // 2
 // this function can also be invoked like this:
-const sum = curriedSum(3)(2)(1)(7); // => returns 10
+let sum2 = curriedSum(3)(2)(1)(7); // => returns 10
+console.log(sum2)
 
-AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
-- Come up with at least two situations (one per person) on when currying would
-  be useful
-***********************************************************************/
-
-// your code here
-
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-
-try {
-  module.exports = curriedSum;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+// AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
+// - Come up with at least two situations (one per person) on when currying would
+//   be useful

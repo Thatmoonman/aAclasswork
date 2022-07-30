@@ -31,7 +31,8 @@ function countDownTimer(n) {
   if (n === 0) return "Happy New Year"
 
   return function () {
-    return n -= 1
+    n--
+    return n;
   }
 }
 // your code here
