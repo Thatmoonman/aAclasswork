@@ -29,10 +29,15 @@ Example 4:
 ***********************************************************************/
 function countDownTimer(n) {
   if (n === 0) return "Happy New Year"
-
+  let countDown = n
+  
   return function () {
-    n--
-    return n;
+    if (countDown === 0) {
+      return "Happy New Year" 
+    } else {
+      countDown--
+      return countDown;
+    }
   }
 }
 // your code here

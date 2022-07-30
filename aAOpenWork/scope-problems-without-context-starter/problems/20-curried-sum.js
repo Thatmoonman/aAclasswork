@@ -30,14 +30,15 @@ actually does the required work of summing.
 function curriedSum(numArgs) {
   let numbers = []
 
-  return function(num) {
+  function _curriedSum(num) {
     numbers.push(num)
     if (numbers.length === numArgs) {
       return numbers.reduce((acc, ele) => acc += ele)
     } else {
-      return `_curriedSum`
+      return _curriedSum
     }
   }
+  return _curriedSum
 }
 // your code here
 
