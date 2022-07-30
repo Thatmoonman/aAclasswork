@@ -14,14 +14,26 @@ let fame = plannedIntersect(["f", "a", "m", "e"]); // returns a function
 console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 *******************************************************************************/
+function plannedIntersect(firstArr) {
+  let common = []
 
+  return function(secondArr) {
+    for (let i = 0; i < firstArr.length; i++) {
+      if (secondArr.includes(firstArr[i])) {
+        common.push(firstArr[i])
+      }
+    }
+    return common
+  }
+}
 // your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 
-try {
-  module.exports = plannedIntersect;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+// Example 1:
+let abc = plannedIntersect(["a", "b", "c"]); // returns a function
+console.log(abc(["b", "d", "c"])); // returns [ 'b', 'c' ]
+
+// Example 2:
+let fame = plannedIntersect(["f", "a", "m", "e"]); // returns a function
+console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]

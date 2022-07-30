@@ -23,12 +23,17 @@ console.log(table2(1)); // prints 6
 console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
-let recVolume = (num) => {
-  let volume = [] 
-  if (volume.length < 3) {
-    volume.push(num)
+const recVolume = (h) => {
+  let count = 1
+  let volume = h
+
+  return function(lw) {
+    count++
+    if (count <= 3) {
+      volume *= lw
+    }
+    return volume
   }
-  return volume
 }
 // your code here
 // Example 1:

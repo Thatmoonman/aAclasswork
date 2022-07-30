@@ -14,14 +14,19 @@ console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]
 
 
 ***********************************************************************/
-
+function coupon(discount) {
+  return function (array) {
+    return array.map(ele => ele - (ele * discount))
+  }
+}
 // your code here!
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
-try {
-  module.exports = coupon;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
-}
+// Example 1:
+let tenPercent = coupon(0.1);
+console.log(tenPercent([10, 20, 30])); // [ 9, 18, 27 ]
+
+// Example 2:
+let twentyPercent = coupon(0.2);
+console.log(twentyPercent([10, 20, 30])); // [ 8, 16, 24 ]

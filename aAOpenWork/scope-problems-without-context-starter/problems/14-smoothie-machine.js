@@ -21,13 +21,28 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
+function smoothieMachine(...starter) {
+  let sentence = "I'm having a smoothing with "
+  let ingredients = []
+  if (starter !== undefined) {
+    ingredients = [...starter]
+  }
 
-// your code here
-
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
-try {
-  module.exports = smoothieMachine;
-} catch (e) {
-  // catch the ref err
-  module.exports = null;
+  return function (...parameters) {
+    ingredients.push(...parameters)
+    return sentence + ingredients.join(" and ")
+  }
 }
+// your code here
+let smoothie1 = smoothieMachine()
+
+console.log(smoothie1("milk"));
+// prints "I'm having a smoothie with milk"
+console.log(smoothie1("kale", "spinach"));
+// prints "I'm having a smoothie with milk and kale and spinach"
+console.log(smoothie1("honey", "pears", "berries"));
+// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
+
+let smoothie2 = smoothieMachine("apples", "bananas", "berries");
+console.log(smoothie2("pineapple"));
+// prints "I'm having a smoothie with apples and bananas and berries and pineapple"

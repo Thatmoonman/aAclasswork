@@ -16,7 +16,7 @@ let sandwich2 = sandwichMaker(); // => returns a function
 sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
-let sandwichMaker = () => {
+const sandwichMaker = () => {
   let ingredients = ["tomato"]
   let sentence = "One sandwich with "
   
