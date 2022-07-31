@@ -21,12 +21,16 @@ exponent(5, 5); // 3125
 ***********************************************************************/
 
 function exponent(b, n) {
-  // your code here
+  if (n === 0) return 1;
+  if (Math.abs(n) === 1) return b;
+
+  if (n > 0) {
+    return b * exponent(b, n - 1)
+  } else {
+    return (1/b) * (1/exponent(b, n + 1))
+  }
 }
   
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = exponent;
-} catch (e) {
-  module.exports = null;
-}
+console.log(exponent(3, 2)); // 9
+console.log(exponent(2, -2)); // 1/4 (or 0.25)
+console.log(exponent(5, 5)); // 3125

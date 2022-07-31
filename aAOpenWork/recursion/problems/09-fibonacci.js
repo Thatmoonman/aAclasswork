@@ -18,13 +18,16 @@ fibonacci(3); // 2
 fibonacci(4); // 3
 fibonacci(10); // 55
 ***********************************************************************/
+function fibonacci(n) {
+  if (n <= 1) return n;
 
+  return fibonacci(n - 1) + fibonacci(n - 2)
+}
 // your code here
   
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = fibonacci;
-} catch (e) {
-  module.exports = null;
-}
+console.log(fibonacci(1)); // 1
+console.log(fibonacci(2)); // 1
+console.log(fibonacci(3)); // 2
+console.log(fibonacci(4)); // 3
+console.log(fibonacci(10)); // 55
   

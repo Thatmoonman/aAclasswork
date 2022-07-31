@@ -15,13 +15,13 @@ factorial(1); // 1
 factorial(3); // 6
 factorial(5); // 120
 ***********************************************************************/
+function factorial(num) {
+  if (num === 1) return num;
 
+  return num * factorial(num - 1);
+}
 // your code here
   
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = factorial;
-} catch (e) {
-  module.exports = null;
-}
-  
+console.log(factorial(1)); // 1
+console.log(factorial(3)); // 6
+console.log(factorial(5)); // 120

@@ -9,12 +9,13 @@ flatten([]); // []
 flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
+function flatten(array) {
+  if (array.length === 0) return array;
 
+  return array[0].concat(flatten(array.slice(1)))
+}
 // your code here
   
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = flatten;
-} catch (e) {
-  module.exports = null;
-}
+console.log(flatten([])); // []
+console.log(flatten([1, 2])); // [1, 2]
+console.log(flatten([1, [2, [3]]])); // [1, 2, 3]

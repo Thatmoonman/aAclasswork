@@ -10,12 +10,16 @@ sumToN(1)  // returns 1
 sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
+function sumToN(num) {
+  if (num === 0) return num;
+  if (num < 0) return null;
 
+
+  return num + sumToN(num - 1)
+}
 // your code here
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = sumToN;
-} catch (e) {
-  module.exports = null;
-}
+console.log(sumToN(5)) // returns 15
+console.log(sumToN(1))  // returns 1
+console.log(sumToN(9))  // returns 45
+console.log(sumToN(-8))  // returns null
