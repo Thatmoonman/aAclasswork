@@ -32,10 +32,12 @@ function countDownTimer(n) {
   let timer = n
 
   return function() {
-    if (timer > 0) {
-      return timer -= 1
-    } else {
+    timer--
+
+    if (timer === 0) {
       return "Happy New Year!"
+    } else {
+      return timer
     }
   }
 }
