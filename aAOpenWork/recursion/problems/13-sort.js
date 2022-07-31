@@ -22,12 +22,21 @@ sort([]); // []
 ***********************************************************************/
 
 function sort(nums, sorted = []) {
-  // your code here
+  if (nums.length === 0) return sorted;
+
+  let smallest = Infinity
+  let index
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] < smallest) {
+      smallest = nums[i]
+      index = i
+    }
+  }
+  sorted.push(smallest)
+  return sort(nums.slice(0,index).concat(nums.slice(index + 1)), sorted)
 }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
-try {
-  module.exports = sort;
-} catch (e) {
-  module.exports = null;
-}
+console.log(sort([4,1,6,3,1,7])); // [1, 1, 3, 4, 6, 7]
+console.log(sort([0, 1, -3])); // [-3, 0, 1]
+console.log(sort([])); // []

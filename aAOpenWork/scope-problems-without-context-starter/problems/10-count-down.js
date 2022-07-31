@@ -28,15 +28,14 @@ Example 4:
 
 ***********************************************************************/
 function countDownTimer(n) {
-  if (n === 0) return "Happy New Year"
-  let countDown = n
-  
-  return function () {
-    if (countDown === 0) {
-      return "Happy New Year" 
+  if (n === 0) return "Happy New Year!"
+  let timer = n
+
+  return function() {
+    if (timer > 0) {
+      return timer -= 1
     } else {
-      countDown--
-      return countDown;
+      return "Happy New Year!"
     }
   }
 }
