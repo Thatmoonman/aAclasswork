@@ -10,9 +10,14 @@ flatten([1, 2]); // [1, 2]
 flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 function flatten(array) {
+  let newArray = []
   if (array.length === 0) return array;
 
-  return array[0].concat(flatten(array.slice(1)))
+  if (array.length > 1) {
+    return newArray.push(array.shift()).concat(flatten(array))
+  } else {
+    return 
+  }
 }
 // your code here
   
